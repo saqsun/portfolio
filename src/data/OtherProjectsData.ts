@@ -2,13 +2,31 @@ import ProjectData from "@/data/ProjectData.ts";
 
 export default [
   new ProjectData(
+    "moc_pl21",
+    "Mob Control",
+    "projects/playable-ads/35.moc_pl21/icon.png",
+    "projects/playable-ads/35.moc_pl21/"
+  ),
+  new ProjectData(
+    "cel_pl26",
+    "Collect Em All! Clear the Dots",
+    "projects/playable-ads/36.cel_pl26/icon.jpg",
+    "projects/playable-ads/36.cel_pl26/"
+  ),
+  new ProjectData(
     "murka_slots_p5",
     "Slots Era",
     "projects/playable-ads/20.murka_slots_p5/img/icon.jpg",
     "projects/playable-ads/20.murka_slots_p5/"
   ),
   new ProjectData(
-    "02.easyb_groov_p1",
+    "hol_pl28",
+    "Groovepad",
+    "projects/playable-ads/37.hol_pl28/icon.jpg",
+    "projects/playable-ads/37.hol_pl28/"
+  ),
+  new ProjectData(
+    "easyb_groov_p1",
     "Groovepad",
     "projects/playable-ads/02.easyb_groov_p1/img/icon.jpg",
     "projects/playable-ads/02.easyb_groov_p1/"
