@@ -21,7 +21,7 @@ export default [
   ),
   new ProjectData(
     "hol_pl28",
-    "Groovepad",
+    "Hole.io",
     "projects/playable-ads/37.hol_pl28/icon.jpg",
     "projects/playable-ads/37.hol_pl28/"
   ),
