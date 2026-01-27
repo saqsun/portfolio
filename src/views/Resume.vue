@@ -3,14 +3,15 @@
     <h1>Resume</h1>
 
     <div class="paragraph">
-      Experienced game industry leader with 13+ years, delivering innovative
-      gaming experiences. As a dedicated Senior HTML5 Game Engineer, my passion
-      lies in pushing the boundaries of interactive entertainment.
+      Principal / Lead Web Game Engineer with 15+ years of experience delivering
+      high-performance HTML5 and WebGL games for high-traffic and real-money
+      environments. Specialized in scalable game architectures, deterministic
+      gameplay, performance optimization, and production-ready web game engines.
 
       <div style="margin-top: 20px; margin-bottom: 20px">
         <a
           class="download-link"
-          href="d/Sargis_Sargsyan_-_Senior_Game_Engineer.pdf"
+          href="d/Sargis_Sargsyan_-_Principle_Software_Engineer.pdf"
           target="_blank"
           ><i class="fa fa-download fa-lg fa-fw"></i>Download as PDF</a
         >
@@ -21,10 +22,81 @@
       <h2>Work experience</h2>
 
       <h3>
+        Technical Lead -
+        <a href="https://playrix.com/" target="_blank">Playrix</a>
+      </h3>
+      <h4>2024-Present</h4>
+
+      <div>
+        Leading development of a next-generation web game and playable
+        framework, focused on scalability, performance, and long-term
+        maintainability:
+        <ul>
+          <li>
+            Designed and drove the architecture of a scalable, future-proof
+            framework for 2D and 3D interactive web games.
+          </li>
+          <li>
+            Built internal tooling and automation to improve developer
+            productivity and reduce production overhead.
+          </li>
+          <li>
+            Optimized rendering, asset pipelines, and build systems for fast,
+            lightweight web experiences.
+          </li>
+          <li>
+            Established reliable production workflows and CI/CD standards in
+            collaboration with engineers, artists, and QA.
+          </li>
+          <li>
+            Introduced process and workflow improvements to increase delivery
+            speed and consistency across teams.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tech-stack">TypeScript, WebGL, PixiJS, Three.js, Node.js</div>
+
+      <h3>
+        Senior Game Engine Developer -
+        <a href="https://rubyplay.com/" target="_blank">RubyPlay</a>
+      </h3>
+      <h4>2024-2025</h4>
+
+      <div>
+        Worked on core HTML5 game engine development and optimization for
+        iGaming products, focusing on performance, stability, and long-term
+        maintainability:
+        <ul>
+          <li>
+            Improved game engine performance (game loop, rendering, memory) for
+            stable real-money gameplay across devices.
+          </li>
+          <li>
+            Optimized asset loading, startup time, and runtime responsiveness.
+          </li>
+          <li>
+            Implemented monitoring and stability improvements to strengthen
+            production reliability.
+          </li>
+          <li>
+            Streamlined deployment and release workflows for frequent game
+            updates.
+          </li>
+          <li>
+            Collaborated closely with QA, backend, and frontend teams to deliver
+            end-to-end improvements.
+          </li>
+        </ul>
+      </div>
+
+      <div class="tech-stack">HTML5, TypeScript, WebGL, PixiJS</div>
+
+      <h3>
         Lead HTML5 Game Developer -
         <a href="https://www.voodoo.io/" target="_blank">Voodoo</a>
       </h3>
-      <h4>2023-Present</h4>
+      <h4>2023-2024</h4>
 
       <div>
         As the Lead HTML5 Game (Ads) Developer, spearheaded a dynamic team,
