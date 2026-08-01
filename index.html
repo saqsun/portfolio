@@ -16,13 +16,69 @@
     />
     <title>%VITE_TITLE%</title>
     <meta name="description" content="%VITE_DESCRIPTION%" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="%VITE_PRODUCTION_URL%/" />
     <meta property="og:title" content="%VITE_TITLE%" />
-    <meta property="og:description" content="%VITE_OG_DESCRIPTION%" />
-    <meta property="og:url" content="%VITE_PRODUCTION_URL%" />
+    <meta property="og:description" content="%VITE_DESCRIPTION%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Sargis Sargsyan" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="%VITE_PRODUCTION_URL%/" />
     <meta
       property="og:image"
       content="%VITE_PRODUCTION_URL%/img/avatar-og.jpg"
     />
+    <meta property="og:image:width" content="224" />
+    <meta property="og:image:height" content="224" />
+    <meta property="og:image:alt" content="Portrait of Sargis Sargsyan" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="%VITE_TITLE%" />
+    <meta name="twitter:description" content="%VITE_DESCRIPTION%" />
+    <meta
+      name="twitter:image"
+      content="%VITE_PRODUCTION_URL%/img/avatar-og.jpg"
+    />
+    <meta name="twitter:image:alt" content="Portrait of Sargis Sargsyan" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "%VITE_PRODUCTION_URL%/#person",
+            "name": "Sargis Sargsyan",
+            "url": "%VITE_PRODUCTION_URL%/",
+            "image": "%VITE_PRODUCTION_URL%/img/avatar-og.jpg",
+            "jobTitle": "Senior / Lead HTML5 Game Engineer",
+            "email": "mailto:sargissargsyan@icloud.com",
+            "sameAs": [
+              "https://www.linkedin.com/in/saqsun/",
+              "https://github.com/saqsun"
+            ],
+            "knowsAbout": [
+              "TypeScript",
+              "React",
+              "PixiJS",
+              "WebGL",
+              "HTML5 game development",
+              "Frontend platforms",
+              "Technical leadership"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "%VITE_PRODUCTION_URL%/#website",
+            "url": "%VITE_PRODUCTION_URL%/",
+            "name": "Sargis Sargsyan Portfolio",
+            "description": "%VITE_DESCRIPTION%",
+            "inLanguage": "en",
+            "author": {
+              "@id": "%VITE_PRODUCTION_URL%/#person"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Seo from "./components/Seo";
 import About from "./pages/About";
 
 const Ads = lazy(() => import("./pages/Ads"));
@@ -13,6 +14,7 @@ const Resume = lazy(() => import("./pages/Resume"));
 export default function App() {
   return (
     <div id="app">
+      <Seo />
       <Header />
       <main className="main">
         <Suspense fallback={<output className="sr-only">Loading page…</output>}>
