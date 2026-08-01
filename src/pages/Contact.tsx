@@ -27,8 +27,10 @@ export default function Contact() {
       <h1>Let&apos;s get in touch</h1>
 
       <div className="mb-10">
-        Feel free to contact me about any opportunity, or just to chat about
-        gamedev, coding or anything else.
+        Open to Senior and Lead opportunities in HTML5 gaming, interactive
+        products, and frontend platforms. Feel free to get in touch about a
+        role, a project, or anything related to engineering and game
+        development.
       </div>
 
       <ul className="list-none ps-0 desktop:ps-10">

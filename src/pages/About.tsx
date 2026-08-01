@@ -5,45 +5,41 @@ export default function About() {
 
       <div className="mb-5 max-w-175 desktop:float-left">
         <div>
-          I&apos;m <strong>Sargis Sargsyan</strong>, a leading HTML5 Game
-          Engineer specializing in high-performance games and playable ads. I’ve
-          spearheaded projects at{" "}
+          I&apos;m <strong>Sargis Sargsyan</strong>, a Senior / Lead HTML5 Game
+          Engineer and hands-on technical leader with 15+ years of experience
+          building browser games, interactive products, reusable frameworks, and
+          production tooling.
+        </div>
+
+        <div className="mt-6">
+          Recent experience includes frontend and game-engineering roles at{" "}
           <a href="https://playrix.com/" rel="noreferrer" target="_blank">
             Playrix
           </a>
           ,{" "}
-          <a
-            href="https://www.adexchanger.com/platforms/twitter-acquires-mobile-dsp-crossinstall-on-the-hunt-for-mobile-performance-dollars/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            CrossInstall
+          <a href="https://rubyplay.com/" rel="noreferrer" target="_blank">
+            RubyPlay
           </a>{" "}
           and{" "}
           <a href="https://www.voodoo.io/" rel="noreferrer" target="_blank">
             Voodoo
           </a>
-          , and co-founded startups including{" "}
-          <a href="https://armath.ai/" rel="noreferrer" target="_blank">
-            Armath
-          </a>{" "}
-          and Koreez. I hold a Master&apos;s degree in Mathematics and Computer
-          Science.
+          , plus co-founding Armath. The work spans TypeScript, React, PixiJS,
+          WebGL, game architecture, developer tooling, and mobile performance
+          optimization.
         </div>
 
         <div className="mt-6">
-          Over the years, I’ve built and led products used by tens of millions
-          of players, focusing on performance, scalability, and real business
-          impact. I care deeply about architecture, developer experience, and
-          building systems that scale with teams.
+          Highlights include reducing a game package from approximately 4.5 MB
+          to 1.6 MB and designing reusable frameworks that improve delivery
+          speed across teams.
         </div>
 
         <div className="mt-10">
-          I’m currently exploring{" "}
-          <strong>Senior, Lead, or Executive-level roles</strong> in gaming or
-          interactive products. If you’re looking for someone who combines deep
-          technical expertise with leadership and product thinking, feel free to
-          reach out at{" "}
+          Currently interested in <strong>Senior and Lead roles</strong> in
+          HTML5 gaming, interactive products, and frontend platforms. If
+          you&apos;re looking for someone who combines deep technical expertise
+          with leadership and product thinking, feel free to reach out at{" "}
           <a href="mailto:sargissargsyan@icloud.com">
             sargissargsyan@icloud.com
           </a>

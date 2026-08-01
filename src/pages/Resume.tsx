@@ -1,25 +1,43 @@
 import type { ReactNode } from "react";
 import SkillRate from "../components/SkillRate";
 
-const technologySkills = [
-  ["Software Development", 5],
-  ["Web Development", 5],
-  ["WebGL", 5],
+const engineeringSkills = [
+  ["TypeScript / JavaScript", 5],
+  ["HTML5 Game Development", 5],
+  ["Frontend Architecture", 5],
+  ["Game Architecture", 5],
   ["PixiJS", 5],
-  ["Phaser", 5],
-  ["ActionScript", 5],
-  ["Three.js", 4],
-  ["Flash/Adobe Animate", 4],
-  ["Spine", 4],
-  ["Unity", 3],
-  ["Babylon.js", 2],
-  ["Cocos Creator", 2],
+  ["WebGL / Canvas", 5],
+  ["Browser Performance", 5],
+  ["Performance Optimization", 5],
+  ["Developer Tooling", 5],
+  ["Build Tooling & CI/CD", 4],
+  ["React", 4],
+  ["Physics & Animation", 4],
 ] as const;
 
-const otherSkills = [
-  ["Project Management", 5],
-  ["Management", 5],
-  ["Collaboration", 5],
+const leadershipSkills = [
+  ["Technical Leadership", 5],
+  ["Engineering Planning", 5],
+  ["Code Reviews & Mentoring", 5],
+  ["Cross-Functional Delivery", 5],
+  ["Process Improvement", 5],
+  ["Production Reliability", 5],
+] as const;
+
+const resumeDownloads = [
+  {
+    label: "HTML5 Game Engineer",
+    href: "/d/Sargis_Sargsyan_-_Senior_Lead_HTML5_Game_Engineer.pdf",
+  },
+  {
+    label: "Frontend / Platform Engineer",
+    href: "/d/Sargis_Sargsyan_-_Senior_Frontend__Platform_Engineer.pdf",
+  },
+  {
+    label: "Technical / Engineering Lead",
+    href: "/d/Sargis_Sargsyan_-_Technical_Lead__Engineering_Lead.pdf",
+  },
 ] as const;
 
 function ExternalLink({
@@ -42,21 +60,19 @@ export default function Resume() {
       <h1>Resume</h1>
 
       <div className="max-w-175 desktop:float-left">
-        Principal / Lead Web Game Engineer with 15+ years of experience
-        delivering high-performance HTML5 and WebGL games for high-traffic and
-        real-money environments. Specialized in scalable game architectures,
-        deterministic gameplay, performance optimization, and production-ready
-        web game engines.
-        <div className="my-5">
-          <a
-            className="float-left mr-12.5"
-            href="/d/Sargis_Sargsyan_-_Principle_Software_Engineer.pdf"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <i className="fa fa-download fa-lg fa-fw" />
-            Download as PDF
-          </a>
+        Senior / Lead HTML5 Game Engineer and hands-on technical leader with 15+
+        years of experience building browser games, frontend platforms, reusable
+        frameworks, and production tooling. Strong in TypeScript, JavaScript,
+        PixiJS, WebGL, browser performance, and developer tooling, with
+        experience owning systems from architecture through production and
+        mentoring engineering teams.
+        <div className="my-5 flex flex-col items-start gap-2">
+          {resumeDownloads.map(({ label, href }) => (
+            <a href={href} key={href} rel="noreferrer" target="_blank">
+              <i className="fa fa-download fa-lg fa-fw mr-2" />
+              {label} PDF
+            </a>
+          ))}
         </div>
       </div>
 
@@ -65,69 +81,90 @@ export default function Resume() {
         <h2>Work experience</h2>
 
         <h3>
+          Frontend Team Lead - <span className="opacity-50">Ixilix</span>
+        </h3>
+        <h4>February 2026 – May 2026</h4>
+        <div className="max-w-200">
+          Led frontend engineering for multiple browser-based products, owning
+          architecture, feature delivery, performance, and production releases.
+          <ul className="my-4 list-disc ps-10">
+            <li>
+              Built responsive game interfaces, live-results widgets, side-bet
+              flows, profile systems, tutorials, analytics events, and
+              backend-integrated features.
+            </li>
+            <li>
+              Improved shared frontend architecture, reusable components, mobile
+              layouts, and production stability across multiple branded game
+              variants.
+            </li>
+            <li>
+              Reviewed code, planned technical work, mentored developers, and
+              coordinated frontend, backend, QA, animation, game design, and
+              product teams.
+            </li>
+          </ul>
+        </div>
+        <div className="max-w-200 italic">React, TypeScript, PixiJS</div>
+
+        <h3>
           Technical Lead -{" "}
           <ExternalLink href="https://playrix.com/">Playrix</ExternalLink>
         </h3>
-        <h4>2024-Present</h4>
+        <h4>June 2025 – January 2026</h4>
         <div className="max-w-200">
-          Leading development of a next-generation web game and playable
-          framework, focused on scalability, performance, and long-term
-          maintainability:
+          Led development of a reusable HTML5 game framework and production
+          pipeline for lightweight, high-performance browser experiences.
           <ul className="my-4 list-disc ps-10">
             <li>
-              Designed and drove the architecture of a scalable, future-proof
-              framework for 2D and 3D interactive web games.
+              Designed shared runtime modules, asset-loading systems, templates,
+              and development tooling.
             </li>
             <li>
-              Built internal tooling and automation to improve developer
-              productivity and reduce production overhead.
+              Built gameplay mechanics, physics interactions, tutorials,
+              animations, visual effects, game states, and complete win/fail
+              flows.
             </li>
             <li>
-              Optimized rendering, asset pipelines, and build systems for fast,
-              lightweight web experiences.
+              Reduced a production package from approximately 4.5 MB to 1.6 MB
+              through asset, loading, and runtime optimization.
             </li>
             <li>
-              Established reliable production workflows and CI/CD standards in
-              collaboration with engineers, artists, and QA.
-            </li>
-            <li>
-              Introduced process and workflow improvements to increase delivery
-              speed and consistency across teams.
+              Established reusable engineering patterns, automation, review
+              practices, and delivery workflows that improved production speed
+              and release reliability.
             </li>
           </ul>
         </div>
         <div className="max-w-200 italic">
-          TypeScript, WebGL, PixiJS, Three.js, Node.js
+          TypeScript, PixiJS, Matter.js, Spine, GSAP
         </div>
 
         <h3>
           Senior Game Engine Developer -{" "}
           <ExternalLink href="https://rubyplay.com/">RubyPlay</ExternalLink>
         </h3>
-        <h4>2024-2025</h4>
+        <h4>September 2024 – June 2025</h4>
         <div className="max-w-200">
-          Worked on core HTML5 game engine development and optimization for
-          iGaming products, focusing on performance, stability, and long-term
-          maintainability:
+          Developed reusable HTML5 game-engine systems and production frameworks
+          for browser-based games.
           <ul className="my-4 list-disc ps-10">
             <li>
-              Improved game engine performance (game loop, rendering, memory)
-              for stable real-money gameplay across devices.
+              Built shared runtime modules for game states, asset loading,
+              configuration, animation systems, platform integrations, and
+              release tooling.
             </li>
             <li>
-              Optimized asset loading, startup time, and runtime responsiveness.
+              Improved engine performance, memory usage, runtime stability, and
+              release reliability across multiple production titles.
             </li>
             <li>
-              Implemented monitoring and stability improvements to strengthen
-              production reliability.
+              Integrated Sentry and strengthened error tracking, debugging,
+              monitoring, and production diagnostics.
             </li>
             <li>
-              Streamlined deployment and release workflows for frequent game
-              updates.
-            </li>
-            <li>
-              Collaborated closely with QA, backend, and frontend teams to
-              deliver end-to-end improvements.
+              Resolved rendering, loading, integration, and runtime issues with
+              game design, mathematics, backend, QA, and product teams.
             </li>
           </ul>
         </div>
@@ -137,63 +174,60 @@ export default function Resume() {
           Lead HTML5 Game Developer -{" "}
           <ExternalLink href="https://www.voodoo.io/">Voodoo</ExternalLink>
         </h3>
-        <h4>2023-2024</h4>
+        <h4>September 2023 – September 2024</h4>
         <div className="max-w-200">
-          As the Lead HTML5 Game (Ads) Developer, spearheaded a dynamic team,
-          seamlessly blending technology and marketing. In this role:
+          Led development of high-performance HTML5 game experiences for mobile
+          web and third-party platforms.
           <ul className="my-4 list-disc ps-10">
             <li>
-              Crafted innovative HTML5 applications that captivated users,
-              achieving an increase in user engagement.
+              Built complete browser-based games with gameplay mechanics,
+              controls, game states, animations, visual feedback, and completion
+              flows.
             </li>
             <li>
-              Employed cutting-edge web technologies and mobile optimization
-              techniques, resulting in a 25% improvement in ads performance.
+              Created reusable gameplay systems, technical templates, and
+              production patterns that accelerated delivery across projects.
             </li>
             <li>
-              Aligned development with marketing strategies, contributing to an
-              increase in game downloads.
+              Optimized code, textures, audio, animations, and asset loading for
+              fast startup, small package sizes, and stable mobile performance.
             </li>
             <li>
-              Optimized user experiences across platforms, ensuring
-              accessibility.
+              Reviewed technical solutions and collaborated with game design,
+              art, creative, product, and marketing teams.
             </li>
           </ul>
         </div>
         <div className="max-w-200 italic">
-          PixiJS, Three.js, Node.js, Webpack, TypeScript
+          JavaScript, TypeScript, PixiJS, Canvas, WebGL
         </div>
 
         <h3>
-          Co Founder &amp; CEO -{" "}
-          <ExternalLink href="https://armath.ai/">Armath</ExternalLink>
+          Co-Founder &amp; CEO -{" "}
+          <span className="opacity-50">Armath (formerly Koreez)</span>
         </h3>
-        <h4>2020-2023</h4>
+        <h4>January 2016 – September 2023</h4>
         <div className="max-w-200">
-          At Armath, led the charge in propelling the startup into
-          collaborations with industry titans such as Twitter, Playrix, and
-          Voodoo. These partnerships validated our innovative approach to gaming
-          and expanded our reach within the digital marketplace. Highlights
-          include:
+          Co-founded and led an independent game studio developing mobile, PC,
+          and browser-based games for international audiences and clients.
           <ul className="my-4 list-disc ps-10">
             <li>
-              Pioneered playable ads, seamlessly integrating attractive gameplay
-              experiences within ads and redefining engagement metrics, setting
-              new industry benchmarks.
+              Led multidisciplinary teams across engineering, game design, art,
+              animation, QA, and production from concept through release.
             </li>
             <li>
-              Transformed HTML5 game development, unlocking new dimensions of
-              game creation and delivering immersive experiences across
-              platforms and devices.
+              Defined product direction, technical architecture, development
+              processes, hiring plans, and delivery workflows.
             </li>
             <li>
-              Positioned Armath as an industry trailblazer in harnessing the
-              potential of HTML5.
+              Built gameplay systems, reusable architecture, internal tools, and
+              production workflows supporting rapid prototyping and
+              multi-platform delivery.
             </li>
             <li>
-              As Executive Officer, fostered a culture of open communication and
-              boundless creativity, channeling collective energy into crafting
-              high-quality games that resonate deeply with players.
+              Managed client relationships, publishing, delivery, and live
+              support while remaining hands-on with engineering; contributed to
+              released titles including Roofbot and Parallyzed.
             </li>
           </ul>
         </div>
@@ -202,80 +236,71 @@ export default function Resume() {
         </div>
 
         <h3>
-          Co Founder &amp; CEO - <span className="opacity-50">Koreez</span>
-        </h3>
-        <h4>2016-2020</h4>
-        <div className="max-w-200">
-          Leading the growth of Koreez, a startup dedicated to bringing
-          high-quality games to the digital marketplace. Since founding the
-          studio in 2016:
-          <ul className="my-4 list-disc ps-10">
-            <li>
-              Established Koreez as a promising startup with several original
-              game ideas.
-            </li>
-            <li>
-              As Executive Officer, focused on product development, product
-              strategy, and brand development.
-            </li>
-            <li>
-              Energized the team with constant communication, fostering
-              creativity, and developing effective solutions to accomplish
-              goals.
-            </li>
-            <li>
-              Driven by a passion for technology, continuously learning to stay
-              ahead in the industry.
-            </li>
-          </ul>
-        </div>
-        <div className="max-w-200 italic">
-          Unity, C#, PixiJS, Phaser, Node.js, Webpack, TypeScript
-        </div>
-
-        <h3>
           Senior Software Engineer -{" "}
           <ExternalLink href="https://rockbitegames.com/">
             Rockbite
           </ExternalLink>
         </h3>
-        <h4>2014-2015</h4>
+        <h4>June 2014 – May 2015</h4>
         <div className="max-w-200">
-          Led the forefront of cross-platform game development for iOS and
-          Android, leveraging the power of Java/libGDX/roboVM. Developed the
-          innovative{" "}
-          <ExternalLink href="https://libgdx.com/wiki/tools/overlap2d#the-original-overlap2d">
-            Overlap2D
-          </ExternalLink>{" "}
-          game editor.
+          Developed cross-platform mobile games and internal game-development
+          tools for iOS and Android.
+          <ul className="my-4 list-disc ps-10">
+            <li>
+              Implemented gameplay systems, user interfaces, animations, and
+              platform-specific functionality using Java, libGDX, and RoboVM.
+            </li>
+            <li>
+              Contributed to{" "}
+              <ExternalLink href="https://libgdx.com/wiki/tools/overlap2d#the-original-overlap2d">
+                Overlap2D
+              </ExternalLink>
+              , a visual editor and runtime workflow for 2D game development.
+            </li>
+            <li>
+              Built reusable tools supporting scene creation, asset workflows,
+              and cross-platform production.
+            </li>
+          </ul>
         </div>
-        <div className="max-w-200 italic">Java, libGDX, roboVM</div>
+        <div className="max-w-200 italic">Java, libGDX, RoboVM</div>
 
         <h3>
           Game Developer -{" "}
           <ExternalLink href="https://plexonic.com/">Plexonic</ExternalLink>
         </h3>
-        <h4>2011-2014</h4>
+        <h4>January 2011 – June 2014</h4>
         <div className="max-w-200">
-          Directed cross-platform mobile game development for iOS, Android, and
-          Facebook, leveraging AS3/Adobe Air/Flash. Played a pivotal role in the
-          innovative development of games across multiple platforms, ensuring
-          seamless user experiences and broad market reach.
+          Developed mobile and social games for iOS, Android, and Facebook.
+          <ul className="my-4 list-disc ps-10">
+            <li>
+              Implemented gameplay mechanics, levels, UI flows, animations, and
+              reusable systems using ActionScript, Adobe AIR, and Flash.
+            </li>
+            <li>
+              Delivered production-ready features across multiple titles and
+              platforms.
+            </li>
+            <li>
+              Collaborated with game designers, artists, backend developers, and
+              QA throughout development, testing, and release.
+            </li>
+          </ul>
         </div>
         <div className="max-w-200 italic">
-          ActionScript 3, Adobe Air, Flash, Starling Framework
+          ActionScript 3, Adobe AIR, Flash, Starling Framework
         </div>
 
         <h2>Skills</h2>
         <div className="skill-set desktop:float-left desktop:pr-15">
-          <h3>Tools &amp; Technologies</h3>
-          {technologySkills.map(([name, rate]) => (
+          <h3>Engineering</h3>
+          {engineeringSkills.map(([name, rate]) => (
             <SkillRate key={name} name={name} rate={rate} />
           ))}
         </div>
         <div className="skill-set desktop:float-left desktop:pr-15">
-          <h3>Other</h3>
-          {otherSkills.map(([name, rate]) => (
+          <h3>Leadership &amp; Delivery</h3>
+          {leadershipSkills.map(([name, rate]) => (
             <SkillRate key={name} name={name} rate={rate} />
           ))}
         </div>
