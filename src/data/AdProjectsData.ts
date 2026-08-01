@@ -4,7 +4,7 @@ export default [
   project(
     "moc_pl21",
     "Mob Control",
-    "projects/playable-ads/35.moc_pl21/icon.png",
+    "projects/playable-ads/35.moc_pl21/icon.jpg",
     "projects/playable-ads/35.moc_pl21/",
   ),
   project(
@@ -14,16 +14,16 @@ export default [
     "projects/playable-ads/36.cel_pl26/",
   ),
   project(
-    "murka_slots_p5",
-    "Slots Era",
-    "projects/playable-ads/20.murka_slots_p5/img/icon.jpg",
-    "projects/playable-ads/20.murka_slots_p5/",
-  ),
-  project(
     "hol_pl28",
     "Hole.io",
     "projects/playable-ads/37.hol_pl28/icon.jpg",
     "projects/playable-ads/37.hol_pl28/",
+  ),
+  project(
+    "murka_slots_p5",
+    "Slots Era",
+    "projects/playable-ads/20.murka_slots_p5/img/icon.jpg",
+    "projects/playable-ads/20.murka_slots_p5/",
   ),
   project(
     "easyb_groov_p1",
