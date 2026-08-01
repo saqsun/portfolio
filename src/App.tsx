@@ -4,9 +4,9 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./pages/About";
 
-const AdProjects = lazy(() => import("./pages/AdProjects"));
+const Ads = lazy(() => import("./pages/Ads"));
 const Contact = lazy(() => import("./pages/Contact"));
-const GameProjects = lazy(() => import("./pages/GameProjects"));
+const Games = lazy(() => import("./pages/Games"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Resume = lazy(() => import("./pages/Resume"));
 
@@ -18,8 +18,8 @@ export default function App() {
         <Suspense fallback={<output className="sr-only">Loading page…</output>}>
           <Routes>
             <Route path="/" element={<About />} />
-            <Route path="/game-projects" element={<GameProjects />} />
-            <Route path="/ads" element={<AdProjects />} />
+            <Route path="/games" element={<Games />} />
+            <Route path="/ads" element={<Ads />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/404" element={<NotFound />} />
