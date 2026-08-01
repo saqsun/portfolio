@@ -28,7 +28,7 @@ export default [
     "dune!",
     "Dune!",
     "img/projects/dune!-icon.webp",
-    "https://yandex.com/games/app/194833",
+    "projects/games/voodo_dune/",
     "#383838",
   ),
   project(
