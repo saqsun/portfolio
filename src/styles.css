@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@source not "../public";
+
+@theme static {
+  --color-body: #383838;
+  --color-content: #434348;
+  --color-text: #dcdcdc;
+  --color-skill: #ffffff;
+  --color-project-title: #000000dd;
+  --color-project-title-dark: #383838dd;
+  --font-portfolio: "Karla", Helvetica, Arial, sans-serif;
+  --breakpoint-desktop: 38.75rem;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--color-body);
+}
+
+#app {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100dvh;
+  flex-direction: column;
+  background-color: var(--color-content);
+  color: var(--color-text);
+  font-family: var(--font-portfolio);
+  line-height: 1.6em;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-align: left;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+a:hover,
+a[aria-current="page"] {
+  opacity: 1;
+}
+
+a.project-card {
+  opacity: 1;
+}
+
+.primary-navigation a[aria-current="page"] {
+  border-bottom: 2px solid var(--color-text);
+}
+
+.resume-page h2 {
+  margin: 0;
+  padding: 50px 0 0;
+  font-size: 2em;
+  font-weight: 100;
+}
+
+.resume-page h3 {
+  margin: 0;
+  padding: 30px 0 0;
+  font-size: 1.6em;
+  font-weight: 100;
+}
+
+.resume-page h4 {
+  margin: 0;
+  padding: 15px 0 0;
+  font-size: 1.3em;
+  font-style: italic;
+  font-weight: 100;
+}
+
+.resume-page .skill-set h3 {
+  padding-bottom: 10px;
+}
+
+h1 {
+  margin-top: -10px;
+  margin-bottom: 40px;
+  margin-left: -2px;
+  font-size: 2.5em;
+  font-weight: 100;
+  line-height: 1.1em;
+}
+
+.main {
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  padding: 12px;
+}
+
+@media only screen and (min-width: 620px) {
+  #app {
+    line-height: 1.8em;
+    text-align: left;
+  }
+
+  h1 {
+    margin-top: 0.67em;
+    margin-bottom: 80px;
+    line-height: 0.7em;
+  }
+
+  .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+  }
+}
