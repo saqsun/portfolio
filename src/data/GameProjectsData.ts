@@ -65,7 +65,7 @@ export default [
     "paint-monsters",
     "Paint Monsters",
     "img/projects/paint-monsters-icon.webp",
-    "https://play.google.com/store/apps/details?id=air.com.sgn.paintmonsters.gp",
+    "https://paint-monsters.en.uptodown.com/android",
     "#383838",
   ),
   project(
