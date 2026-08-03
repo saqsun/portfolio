@@ -56,10 +56,10 @@ function ExternalLink({
 
 export default function Resume() {
   return (
-    <div className="resume-page mx-auto max-w-200">
+    <div className="resume-page mx-auto max-w-225">
       <h1>Resume</h1>
 
-      <div className="max-w-175 desktop:float-left">
+      <div>
         Senior / Lead HTML5 Game Engineer and hands-on technical leader with 15+
         years of experience building browser games, frontend platforms, reusable
         frameworks, and production tooling. Strong in TypeScript, JavaScript,
@@ -305,7 +305,6 @@ export default function Resume() {
           ))}
         </div>
         <div className="clear-both" />
-
         <h2>Education</h2>
         <h3>National Polytechnic University of Armenia - 2012</h3>
         <h4>Master&apos;s degree</h4>

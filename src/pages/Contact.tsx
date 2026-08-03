@@ -23,7 +23,7 @@ const contacts = [
 
 export default function Contact() {
   return (
-    <div className="mx-auto max-w-200">
+    <div className="mx-auto max-w-225">
       <h1>Let&apos;s get in touch</h1>
 
       <div className="mb-10">
