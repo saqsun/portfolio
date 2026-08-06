@@ -1,43 +1,14 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
+import routeMetadata from "../data/RouteMetadata.json";
 
 type PageMetadata = {
   title: string;
   description: string;
+  indexable: boolean;
 };
 
-const defaultMetadata: PageMetadata = {
-  title: import.meta.env.VITE_TITLE,
-  description: import.meta.env.VITE_DESCRIPTION,
-};
-
-const metadataByPath: Record<string, PageMetadata> = {
-  "/": defaultMetadata,
-  "/games": {
-    title: "HTML5 Games | Sargis Sargsyan",
-    description:
-      "Selected HTML5 games built or heavily contributed to by Senior / Lead Game Engineer Sargis Sargsyan.",
-  },
-  "/ads": {
-    title: "Playable Ads | Sargis Sargsyan",
-    description:
-      "Selected playable ads built or heavily contributed to by Senior / Lead HTML5 Game Engineer Sargis Sargsyan.",
-  },
-  "/resume": {
-    title: "Resume | Sargis Sargsyan",
-    description:
-      "Experience, technical skills, leadership background, and downloadable resumes for Senior / Lead Engineer Sargis Sargsyan.",
-  },
-  "/contact": {
-    title: "Contact | Sargis Sargsyan",
-    description:
-      "Contact Sargis Sargsyan about Senior and Lead opportunities in HTML5 games, interactive products, and frontend platforms.",
-  },
-  "/404": {
-    title: "Page Not Found | Sargis Sargsyan",
-    description: "The requested page could not be found.",
-  },
-};
+const metadataByPath: Record<string, PageMetadata> = routeMetadata;
 
 const productionUrl = import.meta.env.VITE_PRODUCTION_URL.replace(/\/$/, "");
 
@@ -54,7 +25,7 @@ export default function Seo() {
 
   useEffect(() => {
     const metadata = metadataByPath[pathname] ?? metadataByPath["/404"];
-    const isNotFound = pathname === "/404" || !(pathname in metadataByPath);
+    const isNotFound = !metadata.indexable;
     const canonicalUrl = `${productionUrl}${pathname === "/" ? "/" : pathname}`;
     let canonical = document.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]',
