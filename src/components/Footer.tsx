@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="pt-2.5 text-center desktop:float-right desktop:p-5">
         Reach me at{" "}
         <a href="mailto:sargissargsyan@icloud.com">sargissargsyan@icloud.com</a>{" "}
-        or <Link to="/contact">through here</Link>
+        or <Link to="/contact/">through here</Link>
       </div>
     </footer>
   );

@@ -24,9 +24,11 @@ export default function Seo() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const metadata = metadataByPath[pathname] ?? metadataByPath["/404"];
+    const normalizedPath =
+      pathname === "/" || pathname.endsWith("/") ? pathname : `${pathname}/`;
+    const metadata = metadataByPath[normalizedPath] ?? metadataByPath["/404/"];
     const isNotFound = !metadata.indexable;
-    const canonicalUrl = `${productionUrl}${pathname === "/" ? "/" : pathname}`;
+    const canonicalUrl = `${productionUrl}${normalizedPath}`;
     let canonical = document.querySelector<HTMLLinkElement>(
       'link[rel="canonical"]',
     );

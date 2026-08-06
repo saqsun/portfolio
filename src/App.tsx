@@ -20,12 +20,12 @@ export default function App() {
         <Suspense fallback={<output className="sr-only">Loading page…</output>}>
           <Routes>
             <Route path="/" element={<About />} />
-            <Route path="/games" element={<Games />} />
-            <Route path="/ads" element={<Ads />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/404" element={<NotFound />} />
-            <Route path="*" element={<Navigate to="/404" replace />} />
+            <Route path="/games/" element={<Games />} />
+            <Route path="/ads/" element={<Ads />} />
+            <Route path="/resume/" element={<Resume />} />
+            <Route path="/contact/" element={<Contact />} />
+            <Route path="/404/" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404/" replace />} />
           </Routes>
         </Suspense>
       </main>

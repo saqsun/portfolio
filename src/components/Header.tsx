@@ -2,10 +2,10 @@ import { NavLink } from "react-router";
 
 const navigation = [
   { label: "About", href: "/" },
-  { label: "Games", href: "/games" },
-  { label: "Ads", href: "/ads" },
-  { label: "Resume", href: "/resume" },
-  { label: "Contact", href: "/contact" },
+  { label: "Games", href: "/games/" },
+  { label: "Ads", href: "/ads/" },
+  { label: "Resume", href: "/resume/" },
+  { label: "Contact", href: "/contact/" },
 ] as const;
 
 export default function Header() {

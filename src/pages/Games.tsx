@@ -11,7 +11,7 @@ export default function Games() {
       </div>
       <ProjectGrid projects={games} />
       <div className="mt-5">
-        There is more to see <Link to="/ads">here</Link>
+        There is more to see <Link to="/ads/">here</Link>
       </div>
     </div>
   );
