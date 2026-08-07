@@ -9,7 +9,7 @@ export interface Project {
 }
 
 function resolveUrl(url: string) {
-  return url.startsWith("projects/") ? `/${url}` : url;
+  return url.startsWith("/") || /^https?:\/\//.test(url) ? url : `/${url}`;
 }
 
 function resolveTargetUrl(url: string) {
