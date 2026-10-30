@@ -11,7 +11,13 @@ const { VITE_PRODUCTION_URL } = loadEnv(
   projectDirectory,
   "VITE_PRODUCTION_URL",
 );
-const routeMetadata = JSON.parse(
+type RouteMetadata = {
+  title: string;
+  description: string;
+  indexable: boolean;
+};
+
+const routeMetadata: Record<string, RouteMetadata> = JSON.parse(
   await readFile(
     resolve(projectDirectory, "src/data/RouteMetadata.json"),
     "utf8",
@@ -24,7 +30,7 @@ if (!VITE_PRODUCTION_URL) {
 
 const productionUrl = VITE_PRODUCTION_URL.replace(/\/$/, "");
 
-function escapeAttribute(value) {
+function escapeAttribute(value: string) {
   return value
     .replaceAll("&", "&amp;")
     .replaceAll('"', "&quot;")
@@ -32,7 +38,7 @@ function escapeAttribute(value) {
     .replaceAll(">", "&gt;");
 }
 
-function replaceRequired(html, pattern, replacement) {
+function replaceRequired(html: string, pattern: RegExp, replacement: string) {
   if (!pattern.test(html)) {
     throw new Error(`Could not find metadata matching ${pattern}`);
   }
@@ -40,13 +46,13 @@ function replaceRequired(html, pattern, replacement) {
   return html.replace(pattern, replacement);
 }
 
-function injectMetadata(html, path, metadata) {
+function injectMetadata(html: string, path: string, metadata: RouteMetadata) {
   const title = escapeAttribute(metadata.title);
   const description = escapeAttribute(metadata.description);
   const canonicalUrl = `${productionUrl}${path}`;
   const robots = metadata.indexable ? "index, follow" : "noindex, nofollow";
 
-  const replacements = [
+  const replacements: [RegExp, string][] = [
     [/<title>.*?<\/title>/, `<title>${title}</title>`],
     [
       /<meta name="description" content="[^"]*" \/>/,
