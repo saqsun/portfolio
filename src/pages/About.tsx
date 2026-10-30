@@ -60,11 +60,11 @@ function SkillIcon({ name }: { name: string }) {
         aria-hidden="true"
       >
         <img
-          src={`/img/skills/${image}.${name === "Codex" ? "webp" : "svg"}`}
+          src={`/img/skills/${image}.webp`}
           alt=""
           width="16"
           height="16"
-          className={`block shrink-0 object-contain ${name === "Codex" ? "size-6" : name === "WebGL" ? "h-5 w-6" : name === "React" ? "h-4 w-5" : "size-4"} ${name === "Three.js" ? "dark:invert" : name === "WebGL" ? "dark:brightness-[2.5]" : ""}`}
+          className={`block size-5 shrink-0 object-contain ${name === "Three.js" ? "dark:invert" : name === "WebGL" ? "dark:brightness-[2.5]" : ""}`}
           loading="lazy"
         />
       </span>
@@ -333,7 +333,7 @@ export default function About() {
                     websiteLabel={null}
                     title={game.name}
                     href={game.targetUrl}
-                    image={gameCovers[game.id] ?? game.iconUrl}
+                    image={gameCovers[game.id]}
                     landscape
                     video={gameCovers[game.id]
                       ?.replace("/img/projects/", "/videos/games/")
@@ -407,11 +407,10 @@ export default function About() {
                         <img
                           src={testimonial.photo}
                           alt={testimonial.name}
-                          width={testimonial.photoWidth}
-                          height={testimonial.photoHeight}
-                          loading="eager"
-                          className="absolute block h-auto max-w-none"
-                          style={testimonial.photoStyle}
+                          width="48"
+                          height="48"
+                          loading="lazy"
+                          className="block size-full object-cover"
                         />
                       </span>
                       <div className="min-w-0 flex-1">

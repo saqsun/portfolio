@@ -67,7 +67,7 @@ export default function Games() {
               websiteLabel={null}
               title={game.name}
               href={game.targetUrl}
-              image={preview?.poster ?? cover ?? game.iconUrl}
+              image={preview?.poster ?? cover}
               video={
                 preview?.video ??
                 cover

@@ -27,7 +27,7 @@ export const profile = {
     },
     {
       company: "RubyPlay",
-      logo: "/img/companies/rubyplay.svg",
+      logo: "/img/companies/rubyplay.webp",
       title: "Senior Game Engine Developer",
       dates: "Sep 2024 – Jun 2025",
       description:
@@ -43,7 +43,7 @@ export const profile = {
     },
     {
       company: "Armath (formerly Koreez)",
-      logo: "/img/companies/koreez.jpg",
+      logo: "/img/companies/koreez.webp",
       title: "Co-Founder & CEO",
       dates: "Jan 2016 – Sep 2023",
       description:
@@ -79,7 +79,8 @@ export const profile = {
     },
     {
       title: "Replayable",
-      image: "/img/projects/replayable.svg",
+      image: "/img/projects/replayable.webp",
+      containImage: true,
       description:
         "A TypeScript toolkit for playable ads, combining asset processing, a browser runtime, and network-specific builds and exports.",
       tags: ["TypeScript", "PixiJS", "Tooling", "Open source"],

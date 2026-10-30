@@ -11,26 +11,24 @@ import { profile } from "../data/Profile";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "../lib/utils";
 
-function LogoImage({ src, alt }: { src: string; alt: string }) {
+function LogoImage({ src }: { src: string }) {
   const [imageError, setImageError] = useState(false);
   const handleError = useCallback(() => setImageError(true), []);
 
-  if (!src || imageError) {
-    return (
-      <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
-    );
-  }
-
   return (
-    <img
-      src={src}
-      alt={alt}
-      className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-white overflow-hidden object-contain flex-none"
-      onError={handleError}
-      loading="lazy"
-      width="40"
-      height="40"
-    />
+    <div className="size-10 shrink-0 overflow-hidden rounded-full border border-border bg-white flex items-center justify-center">
+      {!imageError && (
+        <img
+          src={src}
+          alt=""
+          className="size-full object-contain"
+          onError={handleError}
+          loading="lazy"
+          width="40"
+          height="40"
+        />
+      )}
+    </div>
   );
 }
 
@@ -46,7 +44,7 @@ export default function WorkSection() {
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
             <div className="grid w-full grid-cols-[minmax(0,1fr)] items-center gap-x-3 gap-y-1 text-left sm:grid-cols-[minmax(0,1fr)_auto]">
               <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                <LogoImage src={work.logo} alt="" />
+                <LogoImage src={work.logo} />
                 <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
                   <div className="font-semibold leading-snug flex items-center gap-2">
                     {work.company}
@@ -73,12 +71,12 @@ export default function WorkSection() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-left pl-11 sm:pl-0 sm:text-right flex-none">
+              <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-left pl-13 sm:pl-0 sm:text-right flex-none">
                 <span>{work.dates}</span>
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-0 ml-11 md:ml-13 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+          <AccordionContent className="p-0 ml-13 text-xs sm:text-sm leading-relaxed text-muted-foreground">
             <p>{work.description}</p>
             <ul className="mt-3 list-disc space-y-2 pl-4">
               {workAchievements[work.company]?.map((achievement) => (

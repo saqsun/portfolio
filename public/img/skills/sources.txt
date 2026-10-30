@@ -13,3 +13,5 @@ Git: Devicon original SVG (MIT). CI/CD: Lucide Workflow icon (ISC).
 
 Claude: Simple Icons v16, claude.svg (CC0), brand color #D97757.
 Codex badge: actual Codex app icon, copied from the installed official app resource icon-codex-light.png.
+
+All image assets normalized to 64 × 64 lossless WebP, with a centered 56 × 56 content area and transparent padding. Original proportions preserved. Source SVG attribution above refers to the original assets.
