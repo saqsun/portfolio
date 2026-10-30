@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "./styles.css";
 import App from "./App";
-import { scheduleAnalytics } from "./analytics";
 
 const root = document.getElementById("root");
 
@@ -18,5 +17,3 @@ createRoot(root).render(
     </BrowserRouter>
   </StrictMode>,
 );
-
-scheduleAnalytics();
