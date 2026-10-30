@@ -34,6 +34,11 @@ Data is grouped by feature in `src/data/`, with lowercase kebab-case filenames:
 
 The shared project type and URL helper live in `src/lib/project.ts`.
 
+Source imports use aliases configured in `tsconfig.app.json` and `vite.config.ts`: `#components/*`,
+`#pages/*`, `#data/*`, `#lib/*`, `#styles/*`, and `#src/*` for source-root files.
+Omit TypeScript extensions, for example `#components/ui/Badge`. Keep `.json` and
+`.css` extensions for data and stylesheet imports.
+
 Use `nvm use` to select the pinned Node version, then `npm ci` to install dependencies.
 
 Run `npm run dev` for local preview, `npm run check` for source checks, and

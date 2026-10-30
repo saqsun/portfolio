@@ -1,4 +1,4 @@
-import type { Project } from "../../lib/project";
+import type { Project } from "#lib/project";
 
 export default [
   {

@@ -1,8 +1,8 @@
 import { ThemeProvider } from "next-themes";
 import { MotionConfig } from "motion/react";
-import NavigationDock from "./components/layout/NavigationDock";
-import Seo from "./components/layout/Seo";
-import AppRoutes from "./AppRoutes";
+import NavigationDock from "#components/layout/NavigationDock";
+import Seo from "#components/layout/Seo";
+import AppRoutes from "#src/AppRoutes";
 
 export default function App() {
   return (

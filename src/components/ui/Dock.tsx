@@ -1,6 +1,6 @@
 // Adapted from magicuidesign/portfolio; see licenses/magic-ui-portfolio-LICENSE.
 
-import { cn } from "../../lib/utils";
+import { cn } from "#lib/utils";
 import {
   motion,
   type MotionValue,

@@ -1,4 +1,4 @@
-import BlurFade from "../effects/BlurFade";
+import BlurFade from "#components/effects/BlurFade";
 
 export default function AboutSection() {
   return (

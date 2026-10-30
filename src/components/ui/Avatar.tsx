@@ -7,7 +7,7 @@ import {
 } from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 
-import { cn } from "../../lib/utils";
+import { cn } from "#lib/utils";
 
 // Radix shows the fallback while the image loads or if loading fails.
 type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>;

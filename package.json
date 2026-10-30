@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "imports": {
+    "#components/*": "./src/components/*",
+    "#data/*": "./src/data/*",
+    "#lib/*": "./src/lib/*",
+    "#pages/*": "./src/pages/*",
+    "#styles/*": "./src/styles/*",
+    "#src/*": "./src/*"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build && node scripts/generate-static-routes.ts",

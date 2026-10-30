@@ -1,6 +1,6 @@
-import { CollectionHeader } from "../components/collections/CollectionHeader";
-import { CollectionLink } from "../components/collections/CollectionLink";
-import { GameGrid } from "../components/collections/GameGrid";
+import { CollectionHeader } from "#components/collections/CollectionHeader";
+import { CollectionLink } from "#components/collections/CollectionLink";
+import { GameGrid } from "#components/collections/GameGrid";
 
 export default function Games() {
   return (

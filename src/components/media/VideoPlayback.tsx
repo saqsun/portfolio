@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { getPreviewSource } from "../../lib/preview-format";
-import { cn } from "../../lib/utils";
+import { getPreviewSource } from "#lib/preview-format";
+import { cn } from "#lib/utils";
 
 interface VideoPlaybackProps {
   /** Original MP4 URL, also used if the preferred WebM fails. */

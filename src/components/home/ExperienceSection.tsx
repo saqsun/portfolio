@@ -1,5 +1,5 @@
-import BlurFade from "../effects/BlurFade";
-import WorkExperience from "./WorkExperience";
+import BlurFade from "#components/effects/BlurFade";
+import WorkExperience from "#components/home/WorkExperience";
 
 export default function ExperienceSection() {
   return (

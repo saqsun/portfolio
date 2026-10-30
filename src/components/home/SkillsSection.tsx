@@ -1,6 +1,6 @@
-import BlurFade from "../effects/BlurFade";
-import { featuredSkills } from "../../data/home/skills";
-import SkillIcon from "./SkillIcon";
+import BlurFade from "#components/effects/BlurFade";
+import { featuredSkills } from "#data/home/skills";
+import SkillIcon from "#components/home/SkillIcon";
 
 export default function SkillsSection() {
   return (

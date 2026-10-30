@@ -1,6 +1,6 @@
-import BlurFade from "../effects/BlurFade";
+import BlurFade from "#components/effects/BlurFade";
 import { Mail, Send } from "lucide-react";
-import { BrandIcons } from "../icons/BrandIcons";
+import { BrandIcons } from "#components/icons/BrandIcons";
 
 const contactLinks = [
   {

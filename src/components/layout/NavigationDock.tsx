@@ -1,14 +1,14 @@
-import { BrandIcons } from "../icons/BrandIcons";
+import { BrandIcons } from "#components/icons/BrandIcons";
 import { Home, Sun, Moon, Monitor, Gamepad2 } from "lucide-react";
 import { useCallback } from "react";
 import { useTheme } from "next-themes";
-import { Dock, DockIcon } from "../ui/Dock";
+import { Dock, DockIcon } from "#components/ui/Dock";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../ui/Tooltip";
+} from "#components/ui/Tooltip";
 const links = [
   { label: "Home", href: "/", icon: Home },
   { label: "Games", href: "/games/", icon: Gamepad2 },

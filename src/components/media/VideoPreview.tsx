@@ -1,7 +1,7 @@
 import { useInView, useReducedMotion } from "motion/react";
 import { useCallback, useRef, useState } from "react";
-import { VideoPlayback } from "./VideoPlayback";
-import { usePreviewEnvironment } from "./usePreviewEnvironment";
+import { VideoPlayback } from "#components/media/VideoPlayback";
+import { usePreviewEnvironment } from "#components/media/usePreviewEnvironment";
 
 interface VideoPreviewProps {
   src: string;

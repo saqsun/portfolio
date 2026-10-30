@@ -18,7 +18,15 @@
     "jsx": "react-jsx",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "#components/*": ["./src/components/*"],
+      "#data/*": ["./src/data/*"],
+      "#lib/*": ["./src/lib/*"],
+      "#pages/*": ["./src/pages/*"],
+      "#styles/*": ["./src/styles/*"],
+      "#src/*": ["./src/*"]
+    }
   },
   "include": ["src"]
 }

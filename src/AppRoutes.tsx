@@ -1,11 +1,11 @@
 import { lazy, Suspense, useLayoutEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
-import PageErrorBoundary from "./components/layout/PageErrorBoundary";
-import Home from "./pages/Home";
+import PageErrorBoundary from "#components/layout/PageErrorBoundary";
+import Home from "#pages/Home";
 
-const Ads = lazy(() => import("./pages/Ads"));
-const Games = lazy(() => import("./pages/Games"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Ads = lazy(() => import("#pages/Ads"));
+const Games = lazy(() => import("#pages/Games"));
+const NotFound = lazy(() => import("#pages/NotFound"));
 
 function ScrollToTop() {
   const location = useLocation();

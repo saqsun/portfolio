@@ -1,6 +1,6 @@
-import BlurFade from "../effects/BlurFade";
+import BlurFade from "#components/effects/BlurFade";
 import { ArrowUpRight } from "lucide-react";
-import { testimonials } from "../../data/home/testimonials";
+import { testimonials } from "#data/home/testimonials";
 
 export default function TestimonialsSection() {
   return (

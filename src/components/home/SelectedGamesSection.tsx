@@ -1,11 +1,11 @@
-import BlurFade from "../effects/BlurFade";
+import BlurFade from "#components/effects/BlurFade";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import { ProjectCard } from "../collections/ProjectCard";
-import games from "../../data/games/games";
-import { gamePreviews } from "../../data/games/media";
-import { gameTags } from "../../data/games/tags";
-import { gameDetails } from "../../data/games/details";
+import { ProjectCard } from "#components/collections/ProjectCard";
+import games from "#data/games/games";
+import { gamePreviews } from "#data/games/media";
+import { gameTags } from "#data/games/tags";
+import { gameDetails } from "#data/games/details";
 
 const selectedGames = games.filter((game) =>
   [

@@ -6,7 +6,7 @@ import {
   type ComponentPropsWithoutRef,
   type ComponentRef,
 } from "react";
-import { cn } from "../../lib/utils";
+import { cn } from "#lib/utils";
 
 type ItemProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>;
 type ItemRef = ComponentRef<typeof AccordionPrimitive.Item>;

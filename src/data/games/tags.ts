@@ -1,6 +1,6 @@
-import games from "./games";
-import { gameDetails } from "./details";
-import { gameStores } from "./stores";
+import games from "#data/games/games";
+import { gameDetails } from "#data/games/details";
+import { gameStores } from "#data/games/stores";
 
 export const gameTags = Object.fromEntries(
   games.map((game) => [

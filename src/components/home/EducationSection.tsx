@@ -1,6 +1,6 @@
-import BlurFade from "../effects/BlurFade";
+import BlurFade from "#components/effects/BlurFade";
 import { ArrowUpRight } from "lucide-react";
-import { profile } from "../../data/home/profile";
+import { profile } from "#data/home/profile";
 
 export default function EducationSection() {
   return (

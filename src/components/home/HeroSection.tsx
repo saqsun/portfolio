@@ -1,6 +1,6 @@
-import BlurFade from "../effects/BlurFade";
-import { Avatar, AvatarImage, AvatarFallback } from "../ui/Avatar";
-import { profile } from "../../data/home/profile";
+import BlurFade from "#components/effects/BlurFade";
+import { Avatar, AvatarImage, AvatarFallback } from "#components/ui/Avatar";
+import { profile } from "#data/home/profile";
 
 export default function HeroSection() {
   return (

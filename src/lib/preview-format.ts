@@ -1,4 +1,4 @@
-import videoFormats from "../data/media/video-formats.json";
+import videoFormats from "#data/media/video-formats.json";
 
 // Keep Safari and iOS browsers on the existing H.264 playback path.
 export function selectPreviewSource(

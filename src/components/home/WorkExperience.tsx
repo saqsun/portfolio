@@ -5,11 +5,11 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/Accordion";
-import { workAchievements } from "../../data/home/work-achievements";
-import { profile } from "../../data/home/profile";
+} from "#components/ui/Accordion";
+import { workAchievements } from "#data/home/work-achievements";
+import { profile } from "#data/home/profile";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { cn } from "../../lib/utils";
+import { cn } from "#lib/utils";
 
 function LogoImage({ src }: { src: string }) {
   const [imageError, setImageError] = useState(false);
