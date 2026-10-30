@@ -2,8 +2,6 @@ export const profile = {
   name: "Sargis Sargsyan",
   description:
     "Senior / Lead Game Engineer. I build browser games, reusable frameworks, and tools that help teams ship.",
-  summary:
-    "I’m a hands-on engineer and technical leader with 15+ years across HTML5 games, frontend platforms, and developer tooling. My experience includes Playrix, RubyPlay, Voodoo, and Ixilix, alongside co-founding Armath. I care about reusable architecture, browser performance, and helping engineering teams do their best work.",
   education: [
     { degree: "Master’s degree", year: "2012" },
     { degree: "Bachelor’s degree", year: "2010" },

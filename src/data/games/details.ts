@@ -40,7 +40,7 @@ export const gameDetails: Record<
       "Battle creatures on floating islands with every tap. Recruit and upgrade heroes, unlock spells, and take on powerful bosses while your companions keep earning gold between adventures.",
     source: "https://tapventures.appstor.io/",
   },
-  "dune!": {
+  dune: {
     tags: ["PixiJS", "GSAP", "HTML5"],
     description:
       "Build momentum along rolling dunes and launch into the air to score. Time each landing with the slope to keep your run alive and chain together higher, smoother jumps.",
@@ -58,7 +58,7 @@ export const gameDetails: Record<
       "A one-button basketball challenge with pinball mechanics. Time each flip to send the ball through the hoop—simple controls that reward patience and precision.",
     source: "https://www.crazygames.com/game/flipper-dunk-3d",
   },
-  "break-&-crush-icon": {
+  "break-crush": {
     tags: ["TypeScript", "Three.js", "PixiJS", "Box2D", "GSAP"],
     description:
       "Take control of a crane-mounted crusher and demolish structures across more than 100 levels. Earn points and upgrade your machine for even more destruction.",

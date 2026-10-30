@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
 import { ProjectCard } from "../collections/ProjectCard";
 import games from "../../data/games/games";
-import { gameCovers } from "../../data/games/media";
+import { gamePreviews } from "../../data/games/media";
 import { gameTags } from "../../data/games/tags";
 import { gameDetails } from "../../data/games/details";
 
@@ -11,7 +11,7 @@ const selectedGames = games.filter((game) =>
   [
     "solitaire-klondike-chronicles",
     "flipper-dunk-3d",
-    "break-&-crush-icon",
+    "break-crush",
     "bricks-versus",
   ].includes(game.id),
 );
@@ -48,15 +48,12 @@ export default function SelectedGamesSection() {
                 className="h-full"
               >
                 <ProjectCard
-                  templateStyle
                   websiteLabel={null}
                   title={game.name}
                   href={game.targetUrl}
-                  image={gameCovers[game.id]}
+                  image={gamePreviews[game.id].poster}
                   landscape
-                  video={gameCovers[game.id]
-                    ?.replace("/img/projects/", "/videos/games/")
-                    .replace("-cover.webp", ".mp4")}
+                  video={gamePreviews[game.id].video}
                   tags={gameTags[game.id]}
                   description={gameDetails[game.id].description}
                 />

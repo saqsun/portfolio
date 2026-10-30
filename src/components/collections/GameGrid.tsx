@@ -1,6 +1,6 @@
 import { ProjectCard } from "./ProjectCard";
 import games from "../../data/games/games";
-import { additionalGamePreviews, gameCovers } from "../../data/games/media";
+import { gamePreviews } from "../../data/games/media";
 import { gameDetails } from "../../data/games/details";
 import { gameTags } from "../../data/games/tags";
 
@@ -10,10 +10,10 @@ const gameOrder = [
   "panda-jam",
   "paint-monsters",
   "tapventures",
-  "dune!",
+  "dune",
   "solitaire-klondike-chronicles",
   "flipper-dunk-3d",
-  "break-&-crush-icon",
+  "break-crush",
   "bricks-versus",
 ];
 const orderedGames = [...games].sort(
@@ -27,23 +27,16 @@ export function GameGrid() {
       className="grid grid-cols-1 gap-3 sm:grid-cols-2"
     >
       {orderedGames.map((game) => {
-        const preview = additionalGamePreviews[game.id];
-        const cover = gameCovers[game.id];
+        const preview = gamePreviews[game.id];
         return (
           <ProjectCard
             key={game.id}
-            templateStyle
             landscape
             websiteLabel={null}
             title={game.name}
             href={game.targetUrl}
-            image={preview?.poster ?? cover}
-            video={
-              preview?.video ??
-              cover
-                ?.replace("/img/projects/", "/videos/games/")
-                .replace("-cover.webp", ".mp4")
-            }
+            image={preview.poster}
+            video={preview.video}
             description={gameDetails[game.id].description}
             tags={gameTags[game.id]}
           />

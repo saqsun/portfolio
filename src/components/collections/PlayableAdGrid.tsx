@@ -15,7 +15,6 @@ export function PlayableAdGrid() {
         return (
           <ProjectCard
             key={ad.id}
-            templateStyle
             landscape
             websiteLabel={null}
             title={details.title}

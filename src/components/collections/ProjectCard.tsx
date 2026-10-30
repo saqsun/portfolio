@@ -11,7 +11,6 @@ interface Props {
   tags: readonly string[];
   href: string;
   source?: string;
-  templateStyle?: boolean;
   websiteLabel?: string | null;
   landscape?: boolean;
   video?: string;
@@ -24,7 +23,6 @@ export function ProjectCard({
   tags,
   href,
   source,
-  templateStyle = false,
   websiteLabel = "Website",
   landscape = false,
   video,
@@ -55,7 +53,7 @@ export function ProjectCard({
               loading="lazy"
               width="640"
               height="384"
-              className={`${landscape ? "aspect-[12/7]" : "h-48"} w-full ${containImage || image.endsWith(".svg") ? "bg-slate-100 dark:bg-slate-300 object-contain p-10" : "object-cover"}`}
+              className={`${landscape ? "aspect-[12/7]" : "h-48"} w-full ${containImage ? "bg-slate-100 dark:bg-slate-300 object-contain p-10" : "object-cover"}`}
             />
           </a>
         )}
@@ -90,9 +88,7 @@ export function ProjectCard({
           </div>
         )}
       </div>
-      <div
-        className={`flex flex-1 flex-col gap-3 ${templateStyle ? "p-5 sm:p-6" : "p-5"}`}
-      >
+      <div className="flex flex-1 flex-col gap-3 p-5 sm:p-6">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-semibold">{title}</h3>
           <a
@@ -115,11 +111,7 @@ export function ProjectCard({
             <Badge
               key={tag}
               variant="outline"
-              className={
-                templateStyle
-                  ? "h-6 w-fit border-border px-2 text-[11px] font-medium"
-                  : "text-[10px]"
-              }
+              className="h-6 w-fit border-border px-2 text-[11px] font-medium"
             >
               {tag}
             </Badge>

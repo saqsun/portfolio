@@ -34,7 +34,7 @@ export default function ProjectsSection() {
                 delay={0.48 + index * 0.05}
                 className="h-full"
               >
-                <ProjectCard {...project} templateStyle landscape />
+                <ProjectCard {...project} landscape />
               </BlurFade>
             ))}
           </div>

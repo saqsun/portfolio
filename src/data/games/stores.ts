@@ -43,7 +43,7 @@ export const gameStores: Record<string, GameStoreLinks> = {
     current: [],
     previous: ["App Store", "Google Play"],
   },
-  "dune!": {
+  dune: {
     current: [
       {
         name: "App Store",
@@ -69,7 +69,7 @@ export const gameStores: Record<string, GameStoreLinks> = {
       },
     ],
   },
-  "break-&-crush-icon": {
+  "break-crush": {
     current: [
       { name: "Yandex Games", href: "https://yandex.ru/games/app/171326" },
     ],

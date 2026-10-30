@@ -20,7 +20,7 @@ interface BlurFadeProps {
   delay?: number;
   yOffset?: number;
   inView?: boolean;
-  inViewMargin?: string;
+  inViewMargin?: NonNullable<Parameters<typeof useInView>[1]>["margin"];
   blur?: string;
 }
 const BlurFade = ({
@@ -38,7 +38,7 @@ const BlurFade = ({
   const reducedMotion = useReducedMotion();
   const inViewResult = useInView(ref, {
     once: true,
-    ...(inViewMargin ? { margin: inViewMargin as any } : {}),
+    ...(inViewMargin ? { margin: inViewMargin } : {}),
   });
   const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {

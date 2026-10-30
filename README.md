@@ -34,6 +34,8 @@ Data is grouped by feature in `src/data/`, with lowercase kebab-case filenames:
 
 The shared project type and URL helper live in `src/lib/project.ts`.
 
+Use `nvm use` to select the pinned Node version, then `npm ci` to install dependencies.
+
 Run `npm run dev` for local preview, `npm run check` for source checks, and
 `npm run build` for the GitHub Pages output in `dist/`.
 
@@ -45,7 +47,8 @@ previews are 1200 × 700. Both use silent H.264 with fast-start metadata.
 `VideoPreview` loads videos only while visible and uses poster images for reduced
 motion, data-saving connections, and hidden tabs. Keep poster paths in the data
 files alongside the corresponding videos. Posters are WebP images from the first
-frame of the edited video; SVG logos stay vector. Keep the JPEG social-sharing
+frame of the edited video. Company and skill logos use normalized WebP assets.
+Keep the JPEG social-sharing
 image for link previews.
 
 `public/projects/` contains standalone hosted game and playable-ad builds. Preserve

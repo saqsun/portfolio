@@ -1,15 +1,20 @@
-export const gameCovers: Record<string, string> = {
-  "solitaire-klondike-chronicles":
-    "/img/projects/solitaire-klondike-chronicles-cover.webp",
-  "flipper-dunk-3d": "/img/projects/flipper-dunk-3d-cover.webp",
-  "break-&-crush-icon": "/img/projects/break-crush-cover.webp",
-  "bricks-versus": "/img/projects/bricks-versus-framed-cover.webp",
-};
-
-export const additionalGamePreviews: Record<
-  string,
-  { video: string; poster: string }
-> = {
+export const gamePreviews: Record<string, { video: string; poster: string }> = {
+  "solitaire-klondike-chronicles": {
+    video: "/videos/games/solitaire-klondike-chronicles.mp4",
+    poster: "/img/projects/solitaire-klondike-chronicles-cover.webp",
+  },
+  "flipper-dunk-3d": {
+    video: "/videos/games/flipper-dunk-3d.mp4",
+    poster: "/img/projects/flipper-dunk-3d-cover.webp",
+  },
+  "break-crush": {
+    video: "/videos/games/break-crush.mp4",
+    poster: "/img/projects/break-crush-cover.webp",
+  },
+  "bricks-versus": {
+    video: "/videos/games/bricks-versus-framed.mp4",
+    poster: "/img/projects/bricks-versus-framed-cover.webp",
+  },
   tapventures: {
     video: "/videos/games/tapventures.mp4",
     poster: "/img/projects/tapventures-preview.webp",
@@ -22,7 +27,7 @@ export const additionalGamePreviews: Record<
     video: "/videos/games/paint-monsters.mp4",
     poster: "/img/projects/paint-monsters-preview.webp",
   },
-  "dune!": {
+  dune: {
     video: "/videos/games/dune.mp4",
     poster: "/img/projects/dune-preview.webp",
   },

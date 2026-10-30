@@ -12,12 +12,12 @@ export default [
     targetUrl: "https://www.crazygames.com/game/flipper-dunk-3d",
   },
   {
-    id: "break-&-crush-icon",
+    id: "break-crush",
     name: "Break & Crush",
     targetUrl: "https://yandex.ru/games/app/171326",
   },
   {
-    id: "dune!",
+    id: "dune",
     name: "Dune!",
     targetUrl: "/projects/games/voodo_dune/index.html",
   },
