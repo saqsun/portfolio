@@ -4,7 +4,7 @@
 // Tapventures stack: https://www.youtube.com/watch?v=Lp1GRyUUoFM
 // SALTR is credited on both Plexonic game pages. ActionScript/AIR are provisional.
 // Dune tags refer to the hosted browser adaptation, verified in its bundled code.
-export const featuredGameDescriptions: Record<
+export const gameDetails: Record<
   string,
   { description: string; source: string; tags: string[] }
 > = {

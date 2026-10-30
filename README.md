@@ -24,10 +24,16 @@ using React, TypeScript, Vite, Tailwind CSS, local shadcn/ui components, and Mot
 The imported template's MIT notice is in `licenses/magic-ui-portfolio-LICENSE`.
 Next.js is not required; `next-themes` supplies the standalone React theme provider.
 
-Edit `src/data/Profile.ts` for biography, experience, and open-source projects;
-`src/data/Skills.ts` for skills; and `src/data/Testimonials.ts` for recommendations.
-Games use `GamesData.ts`, `FeaturedGames.ts`, `GameMedia.ts`, and `GameStores.ts`.
-Playable ads use `AdsData.ts`, `AdDetails.ts`, and `AdPreviews.ts` in `src/data/`.
+Data is grouped by feature in `src/data/`, with lowercase kebab-case filenames:
+
+- `home/`: profile, skills, testimonials, and work achievements.
+- `games/`: game listings, details, preview media, tags, and stores.
+- `ads/`: playable-ad listings, details, and previews.
+- `media/`: the video-format manifest.
+- `site/`: route metadata shared by the app and static-route build script.
+
+The shared project type and URL helper live in `src/lib/project.ts`.
+
 Run `npm run dev` for local preview, `npm run check` for source checks, and
 `npm run build` for the GitHub Pages output in `dist/`.
 
@@ -48,7 +54,7 @@ by the games or accessed through direct URLs.
 
 ### Optional WebM variants
 
-Existing WebM variants are mapped in `src/data/VideoFormats.json`. Keep this
+Existing WebM variants are mapped in `src/data/media/video-formats.json`. Keep this
 manifest aligned with the available files when replacing previews.
 
 Safari and iOS browsers always use H.264 MP4. Other browsers use an accepted WebM

@@ -19,7 +19,7 @@ type RouteMetadata = {
 
 const routeMetadata: Record<string, RouteMetadata> = JSON.parse(
   await readFile(
-    resolve(projectDirectory, "src/data/RouteMetadata.json"),
+    resolve(projectDirectory, "src/data/site/route-metadata.json"),
     "utf8",
   ),
 );

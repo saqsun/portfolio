@@ -6,8 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/Accordion";
-import { workAchievements } from "../../data/WorkAchievements";
-import { profile } from "../../data/Profile";
+import { workAchievements } from "../../data/home/work-achievements";
+import { profile } from "../../data/home/profile";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "../../lib/utils";
 

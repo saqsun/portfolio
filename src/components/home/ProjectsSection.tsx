@@ -1,5 +1,5 @@
 import BlurFade from "../effects/BlurFade";
-import { profile } from "../../data/Profile";
+import { profile } from "../../data/home/profile";
 import { ProjectCard } from "../collections/ProjectCard";
 
 export default function ProjectsSection() {

@@ -1,8 +1,8 @@
 import { ProjectCard } from "./ProjectCard";
-import games from "../../data/GamesData";
-import { additionalGamePreviews, gameCovers } from "../../data/GameMedia";
-import { featuredGameDescriptions } from "../../data/FeaturedGames";
-import { gameTags } from "../../data/GameTags";
+import games from "../../data/games/games";
+import { additionalGamePreviews, gameCovers } from "../../data/games/media";
+import { gameDetails } from "../../data/games/details";
+import { gameTags } from "../../data/games/tags";
 
 const gameOrder = [
   "roofbot",
@@ -44,7 +44,7 @@ export function GameGrid() {
                 ?.replace("/img/projects/", "/videos/games/")
                 .replace("-cover.webp", ".mp4")
             }
-            description={featuredGameDescriptions[game.id].description}
+            description={gameDetails[game.id].description}
             tags={gameTags[game.id]}
           />
         );
