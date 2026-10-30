@@ -1,7 +1,7 @@
 import { lazy, Suspense, useLayoutEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
 import PageErrorBoundary from "./components/page-error-boundary";
-import About from "./pages/About";
+import Home from "./pages/Home";
 
 const Ads = lazy(() => import("./pages/Ads"));
 const Games = lazy(() => import("./pages/Games"));
@@ -35,7 +35,7 @@ export default function AppRoutes() {
       <Suspense fallback={<PageLoading />}>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<About />} />
+          <Route path="/" element={<Home />} />
           <Route path="/games/" element={<Games />} />
           <Route path="/ads/" element={<Ads />} />
           <Route path="/404/" element={<NotFound />} />
