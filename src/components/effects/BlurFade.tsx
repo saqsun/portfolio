@@ -1,7 +1,11 @@
 // Adapted from magicuidesign/portfolio; see licenses/magic-ui-portfolio-LICENSE.
 
 import { motion, useReducedMotion } from "motion/react";
-import { useMemo, type ReactNode } from "react";
+import { useMemo, useSyncExternalStore, type ReactNode } from "react";
+
+const subscribe = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 
 const visibleState = { y: 0, opacity: 1, filter: "blur(0px)" };
 
@@ -20,6 +24,12 @@ export default function BlurFade({
   yOffset = 6,
   blur = "6px",
 }: BlurFadeProps) {
+  // Keep prerendered content visible, including during its first hydration render.
+  const hydrated = useSyncExternalStore(
+    subscribe,
+    clientSnapshot,
+    serverSnapshot,
+  );
   const reducedMotion = useReducedMotion();
 
   const initialState = useMemo(
@@ -38,7 +48,7 @@ export default function BlurFade({
   return (
     <motion.div
       className={className}
-      initial={reducedMotion ? false : initialState}
+      initial={!hydrated || reducedMotion ? false : initialState}
       animate={visibleState}
       transition={transition}
     >

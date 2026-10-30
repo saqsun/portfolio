@@ -1,6 +1,8 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { loadEnv } from "vite";
+import { tmpdir } from "node:os";
+import { pathToFileURL } from "node:url";
+import { build, loadEnv } from "vite";
 
 const projectDirectory = resolve(import.meta.dirname, "..");
 const outputDirectory = resolve(projectDirectory, "dist");
@@ -95,23 +97,41 @@ function injectMetadata(html: string, path: string, metadata: RouteMetadata) {
   );
 }
 
-const indexableRoutes = Object.entries(routeMetadata).filter(
-  ([path, metadata]) => path !== "/" && metadata.indexable,
+// Bundle the same app for Node using Vite’s aliases, transforms, and Redact runtime.
+// The temporary server bundle never ships with the static site.
+const renderDirectory = await mkdtemp(
+  resolve(tmpdir(), "portfolio-prerender-"),
 );
 
-await Promise.all(
-  indexableRoutes.map(async ([path, metadata]) => {
-    const routeDirectory = resolve(outputDirectory, path.slice(1));
+try {
+  await build({
+    mode: "production",
+    ssr: { noExternal: true },
+    build: {
+      ssr: "src/entry-server.tsx",
+      outDir: renderDirectory,
+      copyPublicDir: false,
+      emptyOutDir: true,
+      rollupOptions: { output: { entryFileNames: "entry-server.mjs" } },
+    },
+  });
+  const { render } = (await import(
+    pathToFileURL(resolve(renderDirectory, "entry-server.mjs")).href
+  )) as { render: (path: string) => string };
 
-    await mkdir(routeDirectory, { recursive: true });
-    await writeFile(
-      resolve(routeDirectory, "index.html"),
-      injectMetadata(baseHtml, path, metadata),
-    );
-  }),
-);
-
-await writeFile(
-  resolve(outputDirectory, "404.html"),
-  injectMetadata(baseHtml, "/404/", routeMetadata["/404/"]),
-);
+  await Promise.all(
+    Object.entries(routeMetadata).map(async ([path, metadata]) => {
+      const html = injectMetadata(baseHtml, path, metadata).replace(
+        '<div id="root"></div>',
+        () => `<div id="root">${render(path)}</div>`,
+      );
+      const destination =
+        path === "/404/" ? "404.html" : `${path.slice(1)}index.html`;
+      const outputPath = resolve(outputDirectory, destination);
+      await mkdir(resolve(outputPath, ".."), { recursive: true });
+      await writeFile(outputPath, html);
+    }),
+  );
+} finally {
+  await rm(renderDirectory, { recursive: true, force: true });
+}

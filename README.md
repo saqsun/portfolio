@@ -44,6 +44,20 @@ Use `nvm use` to select the pinned Node version, then `npm ci` to install depend
 Run `npm run dev` for local preview, `npm run check` for source checks, and
 `npm run build` for the GitHub Pages output in `dist/`.
 
+## Static rendering
+
+`npm run build` bundles the client, then renders the existing page components into
+`dist/index.html`, `dist/games/index.html`, and `dist/ads/index.html`. It also renders
+`404.html` with noindex metadata. Rendering runs only during the build; deployment
+still uses static GitHub Pages hosting.
+
+`src/entry-server.tsx` supplies eager pages to avoid loading placeholders in HTML.
+The browser hydrates that HTML and keeps lazy route chunks, theme controls, and
+video loading. Entrance effects leave prerendered content visible without JavaScript.
+A temporary Vite server bundle is removed after rendering and is never deployed.
+
+Run `npm run test:prerender` after a build to check generated content and metadata.
+
 ## Preview media
 
 Active previews live in `public/videos/`, with source attribution in each folder's

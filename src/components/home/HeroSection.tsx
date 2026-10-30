@@ -1,5 +1,5 @@
 import BlurFade from "#components/effects/BlurFade";
-import { Avatar, AvatarImage, AvatarFallback } from "#components/ui/Avatar";
+import { Avatar } from "#components/ui/Avatar";
 import { profile } from "#data/home/profile";
 
 export default function HeroSection() {
@@ -10,7 +10,7 @@ export default function HeroSection() {
           <div className="order-2 flex min-w-0 flex-col gap-2 md:order-1">
             <BlurFade delay={0.04} yOffset={8} blur="8px">
               <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
-                Hi, I’m Sargis
+                Hi, I’m {profile.name}
               </h1>
             </BlurFade>
             <BlurFade delay={0.04} yOffset={8} blur="8px">
@@ -21,11 +21,14 @@ export default function HeroSection() {
           </div>
           <BlurFade delay={0.04} className="order-1 shrink-0 md:order-2">
             <Avatar className="size-24 rounded-full border shadow-lg ring-4 ring-muted md:size-32">
-              <AvatarImage
+              <img
                 src="/img/avatars/sargis-sargsyan.webp"
                 alt={profile.name}
+                width="128"
+                height="128"
+                className="aspect-square size-full"
+                fetchPriority="high"
               />
-              <AvatarFallback>SS</AvatarFallback>
             </Avatar>
           </BlurFade>
         </div>

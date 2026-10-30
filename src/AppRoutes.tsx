@@ -1,11 +1,7 @@
-import { lazy, Suspense, useLayoutEffect } from "react";
+import { lazy, Suspense, useLayoutEffect, type ComponentType } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
 import PageErrorBoundary from "#components/layout/PageErrorBoundary";
 import Home from "#pages/Home";
-
-const Ads = lazy(() => import("#pages/Ads"));
-const Games = lazy(() => import("#pages/Games"));
-const NotFound = lazy(() => import("#pages/NotFound"));
 
 function ScrollToTop() {
   const location = useLocation();
@@ -27,7 +23,28 @@ function PageLoading() {
   );
 }
 
-export default function AppRoutes() {
+export interface RoutePages {
+  Games: ComponentType;
+  Ads: ComponentType;
+  NotFound: ComponentType;
+}
+
+// Build-time rendering supplies eager pages; only the browser needs lazy chunks.
+const lazyPages: RoutePages | undefined = import.meta.env.SSR
+  ? undefined
+  : {
+      Games: lazy(() => import("#pages/Games")),
+      Ads: lazy(() => import("#pages/Ads")),
+      NotFound: lazy(() => import("#pages/NotFound")),
+    };
+
+export default function AppRoutes({
+  pages = lazyPages,
+}: {
+  pages?: RoutePages;
+}) {
+  if (!pages) throw new Error("Prerendering requires eager route components");
+  const { Games, Ads, NotFound } = pages;
   const { pathname } = useLocation();
 
   return (
