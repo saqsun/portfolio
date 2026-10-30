@@ -12,13 +12,13 @@ const Games = lazy(() => import("./pages/Games"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 function ScrollToTop() {
-  const { pathname, hash } = useLocation();
+  const location = useLocation();
 
   useLayoutEffect(() => {
-    if (!hash) {
+    if (!location.hash) {
       window.scrollTo(0, 0);
     }
-  }, [pathname, hash]);
+  }, [location]);
 
   return null;
 }
