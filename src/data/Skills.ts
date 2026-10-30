@@ -1,0 +1,20 @@
+// Selected skills for the homepage.
+export const featuredSkills = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "PixiJS",
+  "Three.js",
+  "WebGL",
+  "Spine",
+  "Node.js",
+  "Webpack",
+  "Vite",
+  "Git",
+  "CI/CD",
+  "Software Architecture",
+  "Performance Tuning",
+  "Technical Leadership",
+  "Claude",
+  "Codex",
+];

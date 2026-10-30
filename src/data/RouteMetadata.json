@@ -14,16 +14,6 @@
     "description": "Selected playable ads built or heavily contributed to by Senior / Lead HTML5 Game Engineer Sargis Sargsyan.",
     "indexable": true
   },
-  "/resume/": {
-    "title": "Resume | Sargis Sargsyan",
-    "description": "Experience, technical skills, leadership background, and downloadable resumes for Senior / Lead Engineer Sargis Sargsyan.",
-    "indexable": true
-  },
-  "/contact/": {
-    "title": "Contact | Sargis Sargsyan",
-    "description": "Contact Sargis Sargsyan about Senior and Lead opportunities in HTML5 games, interactive products, and frontend platforms.",
-    "indexable": true
-  },
   "/404/": {
     "title": "Page Not Found | Sargis Sargsyan",
     "description": "The requested page could not be found.",

@@ -3,9 +3,6 @@ export interface Project {
   readonly name: string;
   readonly iconUrl: string;
   readonly targetUrl: string;
-  readonly accentColor: string;
-  readonly isHigh: boolean;
-  readonly isWide: boolean;
 }
 
 function resolveUrl(url: string) {
@@ -25,17 +22,11 @@ export function project(
   name: string,
   iconUrl: string,
   targetUrl: string,
-  accentColor = "#000000",
-  isHigh = false,
-  isWide = false,
 ): Project {
   return {
     id,
     name,
     iconUrl: resolveUrl(iconUrl),
     targetUrl: resolveTargetUrl(targetUrl),
-    accentColor,
-    isHigh,
-    isWide,
   };
 }

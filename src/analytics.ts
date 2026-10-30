@@ -21,8 +21,8 @@ export function scheduleAnalytics() {
     void initializeAnalytics().catch(() => undefined);
   };
 
-  if (requestIdleCallback) {
-    requestIdleCallback(initialize, { timeout: 2000 });
+  if (typeof window.requestIdleCallback === "function") {
+    window.requestIdleCallback(initialize, { timeout: 2000 });
   } else {
     setTimeout(initialize, 0);
   }
