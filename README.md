@@ -48,12 +48,8 @@ by the games or accessed through direct URLs.
 
 ### Optional WebM variants
 
-Run `python3 scripts/optimize-preview-videos.py` (requires FFmpeg with libvpx-vp9)
-after changing the MP4 masters. It compares each VP9 candidate against its MP4,
-retains only variants at least 10% smaller with SSIM ≥ 0.98, and writes
-`src/data/VideoFormats.json` plus `public/videos/optimization-report.json`.
-The threshold is an automated filter; visually review new accepted encodes too.
-Run `npm run format` after regenerating the manifest.
+Existing WebM variants are mapped in `src/data/VideoFormats.json`. Keep this
+manifest aligned with the available files when replacing previews.
 
 Safari and iOS browsers always use H.264 MP4. Other browsers use an accepted WebM
 only when VP9 is supported, falling back to MP4 on loading or decoding failure.
