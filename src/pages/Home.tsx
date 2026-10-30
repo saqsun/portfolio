@@ -10,7 +10,7 @@ import ContactSection from "../components/home/ContactSection";
 
 export default function Home() {
   return (
-    <div className="template-home">
+    <div className="home-page">
       <HeroSection />
       <AboutSection />
       <ExperienceSection />

@@ -1,0 +1,42 @@
+/* Page container and homepage section spacing. */
+.main {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 96px 24px calc(120px + env(safe-area-inset-bottom));
+}
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.home-page h2 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+.home-page section {
+  scroll-margin-top: 32px;
+}
+.top-pattern {
+  pointer-events: none;
+  position: absolute;
+  inset: 0 0 auto;
+  height: 90px;
+  opacity: 0.28;
+  background-image: radial-gradient(
+    var(--muted-foreground) 0.6px,
+    transparent 0.6px
+  );
+  background-size: 5px 5px;
+  mask-image: linear-gradient(black, transparent);
+}
+@media (max-width: 480px) {
+  .main {
+    padding: 64px 20px calc(110px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Fade the contact section’s decorative grid. */
+.contact-grid {
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
