@@ -1,14 +1,14 @@
-import { BrandIcons } from "./brand-icons";
+import { BrandIcons } from "../icons/BrandIcons";
 import { Home, Sun, Moon, Monitor, Gamepad2 } from "lucide-react";
 import { useCallback } from "react";
 import { useTheme } from "next-themes";
-import { Dock, DockIcon } from "./magicui/dock";
+import { Dock, DockIcon } from "../ui/Dock";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "../ui/Tooltip";
 const links = [
   { label: "Home", href: "/", icon: Home },
   { label: "Games", href: "/games/", icon: Gamepad2 },
@@ -18,7 +18,7 @@ const links = [
     icon: BrandIcons.github,
   },
 ];
-export default function Header() {
+export default function NavigationDock() {
   const { theme = "system", setTheme } = useTheme();
   const nextTheme =
     theme === "system" ? "light" : theme === "light" ? "dark" : "system";

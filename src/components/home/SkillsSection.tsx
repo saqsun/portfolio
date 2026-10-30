@@ -1,4 +1,4 @@
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 import { featuredSkills } from "../../data/Skills";
 import SkillIcon from "./SkillIcon";
 

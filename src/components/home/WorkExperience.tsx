@@ -5,11 +5,11 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
-import { workAchievements } from "../data/WorkAchievements";
-import { profile } from "../data/Profile";
+} from "../ui/Accordion";
+import { workAchievements } from "../../data/WorkAchievements";
+import { profile } from "../../data/Profile";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 
 function LogoImage({ src }: { src: string }) {
   const [imageError, setImageError] = useState(false);
@@ -32,7 +32,7 @@ function LogoImage({ src }: { src: string }) {
   );
 }
 
-export default function WorkSection() {
+export default function WorkExperience() {
   return (
     <Accordion type="single" collapsible className="w-full grid gap-6">
       {profile.work.map((work) => (

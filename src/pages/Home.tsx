@@ -1,12 +1,12 @@
-import HeroSection from "../components/homepage/HeroSection";
-import AboutSection from "../components/homepage/AboutSection";
-import ExperienceSection from "../components/homepage/ExperienceSection";
-import EducationSection from "../components/homepage/EducationSection";
-import SkillsSection from "../components/homepage/SkillsSection";
-import ProjectsSection from "../components/homepage/ProjectsSection";
-import SelectedGamesSection from "../components/homepage/SelectedGamesSection";
-import TestimonialsSection from "../components/homepage/TestimonialsSection";
-import ContactSection from "../components/homepage/ContactSection";
+import HeroSection from "../components/home/HeroSection";
+import AboutSection from "../components/home/AboutSection";
+import ExperienceSection from "../components/home/ExperienceSection";
+import EducationSection from "../components/home/EducationSection";
+import SkillsSection from "../components/home/SkillsSection";
+import ProjectsSection from "../components/home/ProjectsSection";
+import SelectedGamesSection from "../components/home/SelectedGamesSection";
+import TestimonialsSection from "../components/home/TestimonialsSection";
+import ContactSection from "../components/home/ContactSection";
 
 export default function Home() {
   return (

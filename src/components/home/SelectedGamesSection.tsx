@@ -1,7 +1,7 @@
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router";
-import { ProjectCard } from "../project-card";
+import { ProjectCard } from "../collections/ProjectCard";
 import games from "../../data/GamesData";
 import { gameCovers } from "../../data/GameMedia";
 import { gameTags } from "../../data/GameTags";

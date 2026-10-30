@@ -1,6 +1,6 @@
-import { CollectionHeader } from "../components/collection-header";
-import { CollectionLink } from "../components/collection-link";
-import { PlayableAdGrid } from "../components/playable-ad-grid";
+import { CollectionHeader } from "../components/collections/CollectionHeader";
+import { CollectionLink } from "../components/collections/CollectionLink";
+import { PlayableAdGrid } from "../components/collections/PlayableAdGrid";
 
 export default function Ads() {
   return (

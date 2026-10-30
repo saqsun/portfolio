@@ -1,7 +1,7 @@
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 import { Mail, Send } from "lucide-react";
-import { BrandIcons } from "../brand-icons";
-import { FlickeringGrid } from "../magicui/flickering-grid";
+import { BrandIcons } from "../icons/BrandIcons";
+import { FlickeringGrid } from "../effects/FlickeringGrid";
 
 const contactLinks = [
   {

@@ -1,7 +1,7 @@
-import { ProjectCard } from "./project-card";
-import ads from "../data/AdsData";
-import { adPreviews } from "../data/AdPreviews";
-import { adDetails } from "../data/AdDetails";
+import { ProjectCard } from "./ProjectCard";
+import ads from "../../data/AdsData";
+import { adPreviews } from "../../data/AdPreviews";
+import { adDetails } from "../../data/AdDetails";
 
 export function PlayableAdGrid() {
   return (

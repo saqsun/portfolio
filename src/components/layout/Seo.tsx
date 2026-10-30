@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
-import routeMetadata from "../data/RouteMetadata.json";
+import routeMetadata from "../../data/RouteMetadata.json";
 
 type PageMetadata = {
   title: string;

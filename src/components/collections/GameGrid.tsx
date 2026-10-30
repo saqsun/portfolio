@@ -1,8 +1,8 @@
-import { ProjectCard } from "./project-card";
-import games from "../data/GamesData";
-import { additionalGamePreviews, gameCovers } from "../data/GameMedia";
-import { featuredGameDescriptions } from "../data/FeaturedGames";
-import { gameTags } from "../data/GameTags";
+import { ProjectCard } from "./ProjectCard";
+import games from "../../data/GamesData";
+import { additionalGamePreviews, gameCovers } from "../../data/GameMedia";
+import { featuredGameDescriptions } from "../../data/FeaturedGames";
+import { gameTags } from "../../data/GameTags";
 
 const gameOrder = [
   "roofbot",

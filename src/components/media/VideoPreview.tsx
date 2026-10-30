@@ -1,6 +1,6 @@
 import { useInView, useReducedMotion } from "motion/react";
-import videoFormats from "../data/VideoFormats.json";
-import { selectPreviewSource } from "../lib/preview-format";
+import videoFormats from "../../data/VideoFormats.json";
+import { selectPreviewSource } from "../../lib/preview-format";
 import {
   useCallback,
   useEffect,

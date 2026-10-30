@@ -1,6 +1,6 @@
 import { lazy, Suspense, useLayoutEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router";
-import PageErrorBoundary from "./components/page-error-boundary";
+import PageErrorBoundary from "./components/layout/PageErrorBoundary";
 import Home from "./pages/Home";
 
 const Ads = lazy(() => import("./pages/Ads"));

@@ -1,7 +1,7 @@
 import { ThemeProvider } from "next-themes";
 import { MotionConfig } from "motion/react";
-import Header from "./components/Header";
-import Seo from "./components/Seo";
+import NavigationDock from "./components/layout/NavigationDock";
+import Seo from "./components/layout/Seo";
 import AppRoutes from "./AppRoutes";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
         <div id="app">
           <div className="top-pattern" aria-hidden="true" />
           <Seo />
-          <Header />
+          <NavigationDock />
           <main id="main" className="main">
             <AppRoutes />
           </main>

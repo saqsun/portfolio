@@ -1,5 +1,5 @@
-import BlurFade from "../magicui/blur-fade";
-import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
+import BlurFade from "../effects/BlurFade";
+import { Avatar, AvatarImage, AvatarFallback } from "../ui/Avatar";
 import { profile } from "../../data/Profile";
 
 export default function HeroSection() {

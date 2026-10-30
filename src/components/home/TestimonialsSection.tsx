@@ -1,4 +1,4 @@
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 import { ArrowUpRight } from "lucide-react";
 import { testimonials } from "../../data/Testimonials";
 

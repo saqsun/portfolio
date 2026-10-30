@@ -1,8 +1,8 @@
 // Adapted from magicuidesign/portfolio; see licenses/magic-ui-portfolio-LICENSE.
 import { ArrowUpRight, Globe } from "lucide-react";
-import { BrandIcons } from "./brand-icons";
-import { VideoPreview } from "./video-preview";
-import { Badge } from "./ui/badge";
+import { BrandIcons } from "../icons/BrandIcons";
+import { VideoPreview } from "../media/VideoPreview";
+import { Badge } from "../ui/Badge";
 
 interface Props {
   title: string;

@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
-import BlurFade from "./magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 
 interface Props {
   label: string;

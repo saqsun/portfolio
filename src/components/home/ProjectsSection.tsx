@@ -1,6 +1,6 @@
-import BlurFade from "../magicui/blur-fade";
+import BlurFade from "../effects/BlurFade";
 import { profile } from "../../data/Profile";
-import { ProjectCard } from "../project-card";
+import { ProjectCard } from "../collections/ProjectCard";
 
 export default function ProjectsSection() {
   return (
