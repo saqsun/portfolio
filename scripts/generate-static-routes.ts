@@ -115,14 +115,3 @@ await writeFile(
   resolve(outputDirectory, "404.html"),
   injectMetadata(baseHtml, "/404/", routeMetadata["/404/"]),
 );
-
-// Preserve incoming links to retired pages on static hosting.
-await Promise.all(
-  ["resume", "contact"].map(async (retiredPage) => {
-    await mkdir(resolve(outputDirectory, retiredPage), { recursive: true });
-    await writeFile(
-      resolve(outputDirectory, retiredPage, "index.html"),
-      `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Redirecting</title><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0;url=/"><link rel="canonical" href="${escapeAttribute(productionUrl)}/"></head><body><a href="/">Continue to the portfolio</a></body></html>`,
-    );
-  }),
-);
