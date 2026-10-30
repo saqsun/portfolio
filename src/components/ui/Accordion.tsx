@@ -1,55 +1,69 @@
 // Adapted from magicuidesign/portfolio; see licenses/magic-ui-portfolio-LICENSE.
 
-import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ComponentRef,
+} from "react";
 import { cn } from "../../lib/utils";
 
-const Accordion = AccordionPrimitive.Root;
+type ItemProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>;
+type ItemRef = ComponentRef<typeof AccordionPrimitive.Item>;
+type TriggerProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>;
+type TriggerRef = ComponentRef<typeof AccordionPrimitive.Trigger>;
+type ContentProps = ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>;
+type ContentRef = ComponentRef<typeof AccordionPrimitive.Content>;
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
->(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item
-    ref={ref}
-    className={cn("border-b", className)}
-    {...props}
-  />
-));
-AccordionItem.displayName = "AccordionItem";
+// Radix handles open state, keyboard navigation, and accessibility attributes.
+export const Accordion = AccordionPrimitive.Root;
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      className={cn(
-        "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline text-left",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+export const AccordionItem = forwardRef<ItemRef, ItemProps>(
+  function AccordionItem({ className, ...props }, ref) {
+    return (
+      <AccordionPrimitive.Item
+        ref={ref}
+        className={cn("border-b", className)}
+        {...props}
+      />
+    );
+  },
+);
 
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof AccordionPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
->(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
-  >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
-  </AccordionPrimitive.Content>
-));
-AccordionContent.displayName = AccordionPrimitive.Content.displayName;
+export const AccordionTrigger = forwardRef<TriggerRef, TriggerProps>(
+  function AccordionTrigger({ className, children, ...props }, ref) {
+    return (
+      <AccordionPrimitive.Header className="flex">
+        <AccordionPrimitive.Trigger
+          ref={ref}
+          className={cn(
+            "flex flex-1 items-center justify-between py-4 text-left text-sm font-medium",
+            "transition-all hover:underline",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </AccordionPrimitive.Trigger>
+      </AccordionPrimitive.Header>
+    );
+  },
+);
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };
+export const AccordionContent = forwardRef<ContentRef, ContentProps>(
+  function AccordionContent({ className, children, ...props }, ref) {
+    return (
+      <AccordionPrimitive.Content
+        ref={ref}
+        className={cn(
+          "overflow-hidden text-sm",
+          "data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down",
+        )}
+        {...props}
+      >
+        {/* Keep content spacing inside the animated height container. */}
+        <div className={cn("pb-4 pt-0", className)}>{children}</div>
+      </AccordionPrimitive.Content>
+    );
+  },
+);

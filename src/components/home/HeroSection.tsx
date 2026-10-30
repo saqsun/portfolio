@@ -14,7 +14,7 @@ export default function HeroSection() {
               </h1>
             </BlurFade>
             <BlurFade delay={0.04} yOffset={8} blur="8px">
-              <p className="max-w-[600px] text-muted-foreground md:text-lg lg:text-xl">
+              <p className="max-w-150 text-muted-foreground md:text-lg lg:text-xl">
                 {profile.description}
               </p>
             </BlurFade>

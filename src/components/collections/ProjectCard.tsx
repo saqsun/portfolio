@@ -53,7 +53,7 @@ export function ProjectCard({
               loading="lazy"
               width="640"
               height="384"
-              className={`${landscape ? "aspect-[12/7]" : "h-48"} w-full ${containImage ? "bg-slate-100 dark:bg-slate-300 object-contain p-10" : "object-cover"}`}
+              className={`${landscape ? "aspect-12/7" : "h-48"} w-full ${containImage ? "bg-slate-100 dark:bg-slate-300 object-contain p-10" : "object-cover"}`}
             />
           </a>
         )}

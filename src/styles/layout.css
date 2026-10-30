@@ -36,7 +36,10 @@
   }
 }
 
-/* Fade the contact section’s decorative grid. */
+/* Static, theme-aware dots fading into the contact card. */
 .contact-grid {
+  opacity: 0.15;
+  background-image: radial-gradient(var(--foreground) 1px, transparent 1px);
+  background-size: 4px 4px;
   mask-image: linear-gradient(to bottom, black, transparent);
 }

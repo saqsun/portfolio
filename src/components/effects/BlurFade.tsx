@@ -1,74 +1,48 @@
 // Adapted from magicuidesign/portfolio; see licenses/magic-ui-portfolio-LICENSE.
 
-import {
-  AnimatePresence,
-  motion,
-  useInView,
-  useReducedMotion,
-  type Variants,
-} from "motion/react";
-import { useRef, useMemo } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { useMemo, type ReactNode } from "react";
+
+const visibleState = { y: 0, opacity: 1, filter: "blur(0px)" };
 
 interface BlurFadeProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  variant?: {
-    hidden: { y: number };
-    visible: { y: number };
-  };
-  duration?: number;
   delay?: number;
   yOffset?: number;
-  inView?: boolean;
-  inViewMargin?: NonNullable<Parameters<typeof useInView>[1]>["margin"];
   blur?: string;
 }
-const BlurFade = ({
+
+export default function BlurFade({
   children,
   className,
-  variant,
-  duration = 0.4,
   delay = 0,
   yOffset = 6,
-  inView = false,
-  inViewMargin = "-50px",
   blur = "6px",
-}: BlurFadeProps) => {
-  const ref = useRef(null);
+}: BlurFadeProps) {
   const reducedMotion = useReducedMotion();
-  const inViewResult = useInView(ref, {
-    once: true,
-    ...(inViewMargin ? { margin: inViewMargin } : {}),
-  });
-  const isInView = !inView || inViewResult;
-  const defaultVariants: Variants = {
-    hidden: { y: -yOffset, opacity: 0, filter: `blur(${blur})` },
-    visible: { y: 0, opacity: 1, filter: `blur(0px)` },
-  };
-  const combinedVariants = variant || defaultVariants;
+
+  const initialState = useMemo(
+    () => ({ y: -yOffset, opacity: 0, filter: `blur(${blur})` }),
+    [yOffset, blur],
+  );
   const transition = useMemo(
     () => ({
       delay: reducedMotion ? 0 : 0.04 + delay,
-      duration: reducedMotion ? 0 : duration,
+      duration: reducedMotion ? 0 : 0.4,
       ease: "easeOut" as const,
     }),
-    [reducedMotion, delay, duration],
+    [reducedMotion, delay],
   );
-  return (
-    <AnimatePresence>
-      <motion.div
-        ref={ref}
-        initial={reducedMotion ? false : "hidden"}
-        animate={isInView ? "visible" : "hidden"}
-        exit="hidden"
-        variants={combinedVariants}
-        transition={transition}
-        className={className}
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  );
-};
 
-export default BlurFade;
+  return (
+    <motion.div
+      className={className}
+      initial={reducedMotion ? false : initialState}
+      animate={visibleState}
+      transition={transition}
+    >
+      {children}
+    </motion.div>
+  );
+}

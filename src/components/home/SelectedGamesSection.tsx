@@ -40,7 +40,7 @@ export default function SelectedGamesSection() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid w-full max-w-[800px] sm:auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="mx-auto grid w-full max-w-200 sm:auto-rows-fr grid-cols-1 gap-3 sm:grid-cols-2">
             {selectedGames.map((game, index) => (
               <BlurFade
                 key={game.id}

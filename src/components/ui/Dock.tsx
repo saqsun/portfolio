@@ -22,7 +22,9 @@ import {
 interface DockProps {
   className?: string;
   children: ReactNode;
+  /** Maximum button width and height, in pixels. */
   magnification?: number;
+  /** Mouse influence radius around each button, in pixels. */
   distance?: number;
 }
 
@@ -31,52 +33,54 @@ interface DockIconProps {
   children?: ReactNode;
 }
 
-const DEFAULT_MAGNIFICATION = 60;
-const DEFAULT_DISTANCE = 100;
-const BASE_SIZE = 40;
-const BASE_ICON_SIZE = 20;
+const DEFAULT_MAX_SIZE = 60;
+const DEFAULT_HOVER_RADIUS = 100;
+const BUTTON_SIZE = 40;
 const ICON_SIZE_RATIO = 0.5;
-const SPRING = { mass: 0.1, stiffness: 150, damping: 12 };
+const HOVER_SPRING = { mass: 0.1, stiffness: 150, damping: 12 };
 
 interface DockContextValue {
   mouseX: MotionValue<number>;
-  magnification: number;
-  distance: number;
+  maxSize: number;
+  hoverRadius: number;
 }
 
 const DockContext = createContext<DockContextValue | null>(null);
 
-const Dock = ({
+/** Shares mouse position with icons; touch input never triggers magnification. */
+function Dock({
   className,
   children,
-  magnification = DEFAULT_MAGNIFICATION,
-  distance = DEFAULT_DISTANCE,
-}: DockProps) => {
+  magnification = DEFAULT_MAX_SIZE,
+  distance = DEFAULT_HOVER_RADIUS,
+}: DockProps) {
+  // Infinity places the pointer outside every icon’s hover radius.
   const mouseX = useMotionValue(Infinity);
   const reducedMotion = useReducedMotion();
 
-  const value = useMemo(
+  const contextValue = useMemo(
     () => ({
       mouseX,
-      magnification: reducedMotion ? BASE_SIZE : magnification,
-      distance,
+      maxSize: reducedMotion ? BUTTON_SIZE : magnification,
+      hoverRadius: distance,
     }),
     [mouseX, reducedMotion, magnification, distance],
   );
-  const onPointerMove = useCallback(
+  const handlePointerMove = useCallback(
     (event: PointerEvent<HTMLDivElement>) => {
       if (event.pointerType === "mouse") mouseX.set(event.clientX);
     },
     [mouseX],
   );
-  const onMouseLeave = useCallback(() => mouseX.set(Infinity), [mouseX]);
+  const handlePointerLeave = useCallback(() => mouseX.set(Infinity), [mouseX]);
   return (
-    <DockContext.Provider value={value}>
+    <DockContext.Provider value={contextValue}>
       <motion.div
-        onPointerMove={onPointerMove}
-        onPointerLeave={onMouseLeave}
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave}
         className={cn(
-          "mx-auto w-max h-full flex items-end justify-center overflow-visible rounded-full border",
+          "mx-auto flex h-full w-max items-end justify-center",
+          "overflow-visible rounded-full border",
           className,
         )}
       >
@@ -84,52 +88,16 @@ const Dock = ({
       </motion.div>
     </DockContext.Provider>
   );
-};
+}
 
-const DockIcon = ({ className, children }: DockIconProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const context = useContext(DockContext);
+/** Visual wrapper; animation calculations live in useDockIconAnimation below. */
+function DockIcon({ className, children }: DockIconProps) {
+  const { buttonRef, buttonStyle, iconStyle } = useDockIconAnimation();
 
-  if (!context) {
-    throw new Error("DockIcon must be used within a Dock component");
-  }
-
-  const { mouseX, magnification, distance } = context;
-
-  const distanceCalc = useTransform(mouseX, (val: number) => {
-    const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
-    return val - bounds.x - bounds.width / 2;
-  });
-
-  const containerSize = useSpring(
-    useTransform(
-      distanceCalc,
-      [-distance, 0, distance],
-      [BASE_SIZE, magnification, BASE_SIZE],
-    ),
-    SPRING,
-  );
-  const iconSize = useSpring(
-    useTransform(
-      distanceCalc,
-      [-distance, 0, distance],
-      [BASE_ICON_SIZE, magnification * ICON_SIZE_RATIO, BASE_ICON_SIZE],
-    ),
-    SPRING,
-  );
-
-  const containerStyle = useMemo(
-    () => ({ width: containerSize, height: containerSize }),
-    [containerSize],
-  );
-  const iconStyle = useMemo(
-    () => ({ width: iconSize, height: iconSize }),
-    [iconSize],
-  );
   return (
     <motion.div
-      ref={ref}
-      style={containerStyle}
+      ref={buttonRef}
+      style={buttonStyle}
       className={cn(
         "relative flex aspect-square items-center justify-center rounded-full shrink-0",
         className,
@@ -143,7 +111,55 @@ const DockIcon = ({ className, children }: DockIconProps) => {
       </motion.div>
     </motion.div>
   );
-};
+}
+
+/**
+ * Maps mouse distance to button size: base → maximum → base.
+ * Motion values update the DOM directly without React renders on pointer moves.
+ * Reduced motion makes the minimum and maximum equal, disabling magnification.
+ */
+function useDockIconAnimation() {
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const context = useContext(DockContext);
+
+  if (!context) {
+    throw new Error("DockIcon must be used within a Dock component");
+  }
+
+  const { mouseX, maxSize, hoverRadius } = context;
+
+  const distanceFromMouse = useTransform(mouseX, (mousePosition: number) => {
+    const bounds = buttonRef.current?.getBoundingClientRect() ?? {
+      x: 0,
+      width: 0,
+    };
+    return mousePosition - bounds.x - bounds.width / 2;
+  });
+
+  // Icons reach their maximum size at the cursor and return to base size
+  // outside the configured distance on either side.
+  const targetContainerSize = useTransform(
+    distanceFromMouse,
+    [-hoverRadius, 0, hoverRadius],
+    [BUTTON_SIZE, maxSize, BUTTON_SIZE],
+  );
+  const containerSize = useSpring(targetContainerSize, HOVER_SPRING);
+  // The glyph stays half the button size, so it can share the same spring.
+  const iconSize = useTransform(
+    containerSize,
+    (size) => size * ICON_SIZE_RATIO,
+  );
+
+  const buttonStyle = useMemo(
+    () => ({ width: containerSize, height: containerSize }),
+    [containerSize],
+  );
+  const iconStyle = useMemo(
+    () => ({ width: iconSize, height: iconSize }),
+    [iconSize],
+  );
+  return { buttonRef, buttonStyle, iconStyle };
+}
 
 export { Dock, DockIcon };
 export type { DockProps, DockIconProps };

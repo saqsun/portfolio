@@ -1,7 +1,6 @@
 import BlurFade from "../effects/BlurFade";
 import { Mail, Send } from "lucide-react";
 import { BrandIcons } from "../icons/BrandIcons";
-import { FlickeringGrid } from "../effects/FlickeringGrid";
 
 const contactLinks = [
   {
@@ -29,9 +28,7 @@ export default function ContactSection() {
           <div
             className="contact-grid pointer-events-none absolute inset-x-0 top-0 h-1/2 overflow-hidden rounded-xl"
             aria-hidden="true"
-          >
-            <FlickeringGrid squareSize={2} gridGap={2} />
-          </div>
+          />
           <div className="relative flex flex-col items-center gap-4 text-center">
             <h2 className="text-3xl! font-bold tracking-tighter sm:text-5xl!">
               Let’s Build Together
