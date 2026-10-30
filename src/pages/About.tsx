@@ -122,7 +122,10 @@ export default function About() {
             </div>
             <BlurFade delay={0.04} className="order-1 shrink-0 md:order-2">
               <Avatar className="size-24 rounded-full border shadow-lg ring-4 ring-muted md:size-32">
-                <AvatarImage src="/img/avatar.webp" alt={profile.name} />
+                <AvatarImage
+                  src="/img/avatars/sargis-sargsyan.webp"
+                  alt={profile.name}
+                />
                 <AvatarFallback>SS</AvatarFallback>
               </Avatar>
             </BlurFade>
@@ -208,7 +211,7 @@ export default function About() {
                 >
                   <div className="flex min-w-0 flex-1 items-center gap-x-3">
                     <img
-                      src="/img/npua-logo.webp"
+                      src="/img/education/npua-logo.webp"
                       alt=""
                       width="40"
                       height="40"
