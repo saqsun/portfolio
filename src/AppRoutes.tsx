@@ -1,5 +1,5 @@
 import { lazy, Suspense, useLayoutEffect, type ComponentType } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router";
+import { Route, Routes, useLocation } from "react-router";
 import PageErrorBoundary from "#components/layout/PageErrorBoundary";
 import Home from "#pages/Home";
 
@@ -7,7 +7,9 @@ function ScrollToTop() {
   const location = useLocation();
 
   useLayoutEffect(() => {
-    if (!location.hash) {
+    if (location.hash) {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView();
+    } else {
       window.scrollTo(0, 0);
     }
   }, [location]);
@@ -24,8 +26,6 @@ function PageLoading() {
 }
 
 export interface RoutePages {
-  Games: ComponentType;
-  Ads: ComponentType;
   NotFound: ComponentType;
 }
 
@@ -33,8 +33,6 @@ export interface RoutePages {
 const lazyPages: RoutePages | undefined = import.meta.env.SSR
   ? undefined
   : {
-      Games: lazy(() => import("#pages/Games")),
-      Ads: lazy(() => import("#pages/Ads")),
       NotFound: lazy(() => import("#pages/NotFound")),
     };
 
@@ -44,7 +42,7 @@ export default function AppRoutes({
   pages?: RoutePages;
 }) {
   if (!pages) throw new Error("Prerendering requires eager route components");
-  const { Games, Ads, NotFound } = pages;
+  const { NotFound } = pages;
   const { pathname } = useLocation();
 
   return (
@@ -53,10 +51,8 @@ export default function AppRoutes({
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/games/" element={<Games />} />
-          <Route path="/ads/" element={<Ads />} />
           <Route path="/404/" element={<NotFound />} />
-          <Route path="*" element={<Navigate to="/404/" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </PageErrorBoundary>

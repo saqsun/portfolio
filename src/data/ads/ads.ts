@@ -20,6 +20,12 @@ export default [
     "projects/playable-ads/37.hol_pl28/",
   ),
   project(
+    "gs_playable2002",
+    "Gardenscapes 1",
+    "projects/playable-ads/30.gs_playable2002/icon.jpeg",
+    "projects/playable-ads/30.gs_playable2002/",
+  ),
+  project(
     "murka_slots_p5",
     "Slots Era",
     "projects/playable-ads/20.murka_slots_p5/img/icon.jpg",
@@ -150,12 +156,6 @@ export default [
     "Candy Crush 2",
     "projects/playable-ads/29.aarki_ccsag_p8/icon.jpg",
     "projects/playable-ads/29.aarki_ccsag_p8/",
-  ),
-  project(
-    "gs_playable2002",
-    "Gardenscapes 1",
-    "projects/playable-ads/30.gs_playable2002/icon.jpeg",
-    "projects/playable-ads/30.gs_playable2002/",
   ),
   project(
     "gs_playable2003",

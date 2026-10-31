@@ -3,13 +3,13 @@ import ads from "#data/ads/ads";
 import { adPreviews } from "#data/ads/previews";
 import { adDetails } from "#data/ads/details";
 
-export function PlayableAdGrid() {
+export function PlayableAdGrid({ limit }: { limit?: number }) {
   return (
     <section
       aria-label="Playable ad collection"
       className="grid grid-cols-1 gap-3 sm:grid-cols-2"
     >
-      {ads.map((ad) => {
+      {ads.slice(0, limit).map((ad) => {
         const details = adDetails[ad.id];
         const preview = adPreviews[ad.id];
         return (

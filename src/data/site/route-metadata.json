@@ -4,16 +4,6 @@
     "description": "Sargis Sargsyan's portfolio — Senior / Lead HTML5 Game Engineer specializing in TypeScript, PixiJS, WebGL, frontend platforms, and technical leadership.",
     "indexable": true
   },
-  "/games/": {
-    "title": "HTML5 Games | Sargis Sargsyan",
-    "description": "Selected HTML5 games built or heavily contributed to by Senior / Lead Game Engineer Sargis Sargsyan.",
-    "indexable": true
-  },
-  "/ads/": {
-    "title": "Playable Ads | Sargis Sargsyan",
-    "description": "Selected playable ads built or heavily contributed to by Senior / Lead HTML5 Game Engineer Sargis Sargsyan.",
-    "indexable": true
-  },
   "/404/": {
     "title": "Page Not Found | Sargis Sargsyan",
     "description": "The requested page could not be found.",

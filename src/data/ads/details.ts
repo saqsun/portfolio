@@ -1,5 +1,5 @@
 // Descriptions reflect the hosted demos; technologies verified in their local bundles,
-// including decoded Replayable payloads. Names after the dot identify creative variants.
+// including decoded Replayable payloads.
 export const adDetails: Record<
   string,
   { title: string; description: string; tags: string[] }
@@ -35,13 +35,13 @@ export const adDetails: Record<
     tags: ["TypeScript", "HTML5", "Phaser", "PixiJS"],
   },
   gs_playable2000: {
-    title: "Gardenscapes · Fire Rescue",
+    title: "Gardenscapes",
     description:
       "Choose how to tackle a burning building in a short rescue-themed decision puzzle.",
     tags: ["TypeScript", "HTML5", "PixiJS", "GSAP", "Replayable"],
   },
   gs_playable2005: {
-    title: "Gardenscapes · River Crossing",
+    title: "Gardenscapes",
     description:
       "Choose the right piece to repair a broken crossing and help the character continue their journey.",
     tags: ["TypeScript", "HTML5", "PixiJS", "Replayable"],
@@ -131,37 +131,37 @@ export const adDetails: Record<
     tags: ["TypeScript", "HTML5", "Phaser", "PixiJS"],
   },
   aarki_ccsod_p1: {
-    title: "Candy Crush Soda · Match Puzzle",
+    title: "Candy Crush Soda",
     description:
       "Swap colorful candies, create matches, and work toward a level objective with limited moves.",
     tags: ["TypeScript", "HTML5", "PixiJS", "Replayable"],
   },
   aarki_ccsod_p3: {
-    title: "Candy Crush Soda · Pin Puzzle",
+    title: "Candy Crush Soda",
     description:
       "Pull pins in the right order to guide the contents of a puzzle toward the waiting characters.",
     tags: ["TypeScript", "HTML5", "PixiJS", "Replayable"],
   },
   aarki_ccsag_p2: {
-    title: "Candy Crush · Pin Puzzle",
+    title: "Candy Crush",
     description:
       "Choose which pins to remove and control how the puzzle unfolds around the characters below.",
     tags: ["TypeScript", "HTML5", "PixiJS", "GSAP", "Replayable"],
   },
   aarki_ccsag_p8: {
-    title: "Candy Crush · Rescue Puzzle",
+    title: "Candy Crush",
     description:
       "Help the characters escape by solving a small pin-based rescue challenge.",
     tags: ["TypeScript", "HTML5", "Replayable"],
   },
   gs_playable2002: {
-    title: "Gardenscapes · Temperature Rescue",
+    title: "Gardenscapes",
     description:
       "Make choices to change the temperature and help a character trapped inside a building.",
     tags: ["TypeScript", "HTML5", "PixiJS", "Replayable"],
   },
   gs_playable2003: {
-    title: "Gardenscapes · Cold Room",
+    title: "Gardenscapes",
     description:
       "Choose a way to warm a freezing room and help the family sheltering inside.",
     tags: ["TypeScript", "HTML5", "PixiJS", "Replayable"],
@@ -191,13 +191,13 @@ export const adDetails: Record<
     tags: ["TypeScript", "HTML5", "Phaser", "PixiJS"],
   },
   habby_pengu_p1: {
-    title: "Penguin Isle · Island Builder",
+    title: "Penguin Isle",
     description:
       "Build a penguin habitat and bring a quiet island to life through simple upgrade interactions.",
     tags: ["TypeScript", "HTML5", "Phaser", "PixiJS"],
   },
   habby_pengu_p2: {
-    title: "Penguin Isle · Island Expansion",
+    title: "Penguin Isle",
     description:
       "Expand a snowy penguin island and explore its next building opportunities.",
     tags: ["TypeScript", "HTML5", "Phaser", "PixiJS"],

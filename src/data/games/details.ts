@@ -6,15 +6,30 @@
 // Dune tags refer to the hosted browser adaptation, verified in its bundled code.
 export const gameDetails: Record<
   string,
-  { description: string; source: string; tags: string[] }
+  {
+    description: string;
+    source: string;
+    tags: string[];
+    achievement?: { title: string; subtitle: string; href: string };
+  }
 > = {
   roofbot: {
+    achievement: {
+      title: "Free App of\nthe Week",
+      subtitle: "App Store",
+      href: "https://www.phonearena.com/news/Roofbot-is-the-free-iOS-app-of-the-week_id90721",
+    },
     tags: ["Unity", "C#"],
     description:
       "Guide Roofie across shifting rooftops, placing colored energy balls into matching slots. Plan each move carefully as the architecture changes around you across more than 120 puzzles.",
     source: "https://store.steampowered.com/app/545660/Roofbot/",
   },
   parallyzed: {
+    achievement: {
+      title: "Finalist\nIndie Games\nFestival",
+      subtitle: "Google Play",
+      href: "https://android-developers.googleblog.com/2016/09/announcing-the-winners-of-the-google-play-indie-games-festival.html",
+    },
     tags: ["Unity", "C#"],
     description:
       "Control twin sisters Red and Blue simultaneously through parallel dream worlds. Swap their positions and time each jump to overcome obstacles that test both their color and size.",

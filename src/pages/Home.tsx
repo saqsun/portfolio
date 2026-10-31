@@ -4,7 +4,8 @@ import ExperienceSection from "#components/home/ExperienceSection";
 import EducationSection from "#components/home/EducationSection";
 import SkillsSection from "#components/home/SkillsSection";
 import ProjectsSection from "#components/home/ProjectsSection";
-import SelectedGamesSection from "#components/home/SelectedGamesSection";
+import GamesSection from "#components/home/GamesSection";
+import PlayableAdsSection from "#components/home/PlayableAdsSection";
 import TestimonialsSection from "#components/home/TestimonialsSection";
 import ContactSection from "#components/home/ContactSection";
 
@@ -17,7 +18,8 @@ export default function Home() {
       <EducationSection />
       <SkillsSection />
       <ProjectsSection />
-      <SelectedGamesSection />
+      <GamesSection />
+      <PlayableAdsSection />
       <TestimonialsSection />
       <ContactSection />
     </div>

@@ -16,19 +16,7 @@ const pages = [
     path: "/",
     file: "index.html",
     heading: "Hi, I’m Sargis Sargsyan",
-    cards: 6,
-  },
-  {
-    path: "/games/",
-    file: "games/index.html",
-    heading: "Built to be played",
-    cards: 10,
-  },
-  {
-    path: "/ads/",
-    file: "ads/index.html",
-    heading: "A little play. A lasting impression.",
-    cards: 36,
+    cards: 16,
   },
   { path: "/404/", file: "404.html", heading: "Page not found", cards: 0 },
 ];

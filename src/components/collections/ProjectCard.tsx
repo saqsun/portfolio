@@ -2,6 +2,7 @@
 import { ArrowUpRight, Globe } from "lucide-react";
 import { BrandIcons } from "#components/icons/BrandIcons";
 import { VideoPreview } from "#components/media/VideoPreview";
+import { AchievementBadge } from "#components/collections/AchievementBadge";
 import { Badge } from "#components/ui/Badge";
 
 interface Props {
@@ -15,6 +16,7 @@ interface Props {
   landscape?: boolean;
   video?: string;
   containImage?: boolean;
+  achievement?: { title: string; subtitle: string; href: string };
 }
 export function ProjectCard({
   title,
@@ -27,6 +29,7 @@ export function ProjectCard({
   landscape = false,
   video,
   containImage = false,
+  achievement,
 }: Props) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card text-card-foreground transition-all duration-200 hover:ring-2 hover:ring-muted">
@@ -57,6 +60,7 @@ export function ProjectCard({
             />
           </a>
         )}
+        {achievement && <AchievementBadge {...achievement} />}
         {(websiteLabel || source) && (
           <div className="absolute top-2 right-2 left-2 flex flex-wrap justify-end gap-2">
             {websiteLabel && (

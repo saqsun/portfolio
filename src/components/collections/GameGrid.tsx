@@ -5,15 +5,15 @@ import { gameDetails } from "#data/games/details";
 import { gameTags } from "#data/games/tags";
 
 const gameOrder = [
+  "solitaire-klondike-chronicles",
+  "flipper-dunk-3d",
+  "break-crush",
+  "dune",
   "roofbot",
   "parallyzed",
   "panda-jam",
   "paint-monsters",
   "tapventures",
-  "dune",
-  "solitaire-klondike-chronicles",
-  "flipper-dunk-3d",
-  "break-crush",
   "bricks-versus",
 ];
 const orderedGames = [...games].sort(
@@ -38,6 +38,7 @@ export function GameGrid() {
             image={preview.poster}
             video={preview.video}
             description={gameDetails[game.id].description}
+            achievement={gameDetails[game.id].achievement}
             tags={gameTags[game.id]}
           />
         );

@@ -11,7 +11,7 @@ import {
 } from "#components/ui/Tooltip";
 const links = [
   { label: "Home", href: "/", icon: Home },
-  { label: "Games", href: "/games/", icon: Gamepad2 },
+  { label: "Games", href: "/#games", icon: Gamepad2 },
   {
     label: "GitHub",
     href: "https://github.com/saqsun",

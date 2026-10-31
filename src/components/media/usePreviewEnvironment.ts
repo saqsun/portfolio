@@ -27,10 +27,15 @@ function getEnvironment(): PreviewEnvironment {
   if (
     document.hidden ||
     network?.saveData ||
-    ["slow-2g", "2g", "3g"].includes(network?.effectiveType ?? "")
+    ["slow-2g", "2g"].includes(network?.effectiveType ?? "")
   )
     return "poster";
-  return window.matchMedia("(max-width: 639px)").matches ? "mobile" : "desktop";
+  // Connection estimates can report 3G even on desktop Wi-Fi. Use the
+  // lightweight previews instead of silently disabling playback altogether.
+  const useSmallPreview =
+    network?.effectiveType === "3g" ||
+    window.matchMedia("(max-width: 639px)").matches;
+  return useSmallPreview ? "mobile" : "desktop";
 }
 const serverEnvironment = (): PreviewEnvironment => "poster";
 
