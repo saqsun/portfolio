@@ -3,18 +3,23 @@ import { Mail, Send } from "lucide-react";
 import { BrandIcons } from "#components/icons/BrandIcons";
 
 const contactLinks = [
+  { label: "Email", href: "mailto:sargissargsyan@icloud.com", icon: Mail },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/saqsun/",
     icon: BrandIcons.linkedin,
   },
-  { label: "Email", href: "mailto:sargissargsyan@icloud.com", icon: Mail },
-  { label: "Telegram", href: "https://t.me/saqsun", icon: Send },
+  {
+    label: "GitHub",
+    href: "https://github.com/saqsun",
+    icon: BrandIcons.github,
+  },
   {
     label: "WhatsApp",
     href: "https://wa.me/37493443261",
     icon: BrandIcons.whatsapp,
   },
+  { label: "Telegram", href: "https://t.me/saqsun", icon: Send },
 ];
 
 export default function ContactSection() {
@@ -37,17 +42,18 @@ export default function ContactSection() {
               Have an idea worth bringing to life? Let’s build something great
               together.
             </p>
-            <div className="mt-2 grid w-full max-w-xs grid-cols-2 gap-2 sm:flex sm:max-w-none sm:flex-wrap sm:justify-center">
+            <div className="mt-2 flex w-full justify-center gap-2">
               {contactLinks.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
                   href={href}
+                  aria-label={label}
+                  title={label}
                   target={href.startsWith("https:") ? "_blank" : undefined}
                   rel={href.startsWith("https:") ? "noreferrer" : undefined}
-                  className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border bg-background px-4 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border bg-background text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
-                  <Icon className="size-4 shrink-0" aria-hidden="true" />
-                  {label}
+                  <Icon className="size-5" aria-hidden="true" />
                 </a>
               ))}
             </div>

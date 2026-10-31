@@ -2,7 +2,7 @@
 .main {
   width: min(100%, 720px);
   margin: 0 auto;
-  padding: 96px 24px calc(120px + env(safe-area-inset-bottom));
+  padding: 96px 24px calc(64px + env(safe-area-inset-bottom));
 }
 .home-page {
   display: flex;
@@ -32,7 +32,7 @@
 }
 @media (max-width: 480px) {
   .main {
-    padding: 64px 20px calc(110px + env(safe-area-inset-bottom));
+    padding: 64px 20px calc(48px + env(safe-area-inset-bottom));
   }
 }
 
