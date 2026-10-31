@@ -50,6 +50,28 @@ for (const page of pages) {
       ),
     );
     assert.doesNotMatch(html, /%VITE_/);
+    for (const href of html.matchAll(/href="([^"]+)"/g)) {
+      const url = new URL(href[1], origin);
+      if (url.origin === origin) {
+        assert.ok(
+          !["/games", "/ads", "/resume", "/contact"].includes(
+            url.pathname.replace(/\/$/, ""),
+          ),
+          `Stale page link: ${href[1]}`,
+        );
+      }
+    }
     assert.match(html, /<script type="module"[^>]+src="\/assets\//);
   });
 }
+
+test("sitemap lists only the homepage", async () => {
+  const sitemap = await readFile(
+    resolve(projectDirectory, "dist/sitemap.xml"),
+    "utf8",
+  );
+  const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(
+    (match) => match[1],
+  );
+  assert.deepEqual(urls, [`${origin}/`]);
+});
